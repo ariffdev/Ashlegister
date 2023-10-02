@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from schema.note import Note
-from config.firebase_config import note_collection
+from config.firebase_config import notes_collection
 
 
 
