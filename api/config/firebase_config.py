@@ -2,13 +2,14 @@ import pyrebase
 
 
 firebaseConfig = {
-    'apiKey': "AIzaSyAVA2i8m42qqS2zAgTcCLHT6hFSNjE6L-k",
-    'authDomain': "ashletics-management-system.firebaseapp.com",
-    'projectId': "ashletics-management-system",
-    'storageBucket': "ashletics-management-system.appspot.com",
-    'messagingSenderId': "316594096666",
-    'appId': "1:316594096666:web:da2662bdd3306ee4fedfa3",
-    'measurementId': "G-4LD9YLWLYZ"
+    'apiKey': "AIzaSyC5rOaw20XOw2NpkLr3DcvMURysMTmAMMc",
+    'authDomain': "ashlegister.firebaseapp.com",
+    'databaseURL': "https://ashlegister-default-rtdb.firebaseio.com",
+    'projectId': "ashlegister",
+    'storageBucket': "ashlegister.appspot.com",
+    'messagingSenderId': "872176779830",
+    'appId': "1:872176779830:web:024e117c9a8b0facbd4e97",
+    'measurementId': "G-H28JXVHWSE"
 }
 
 firebase = pyrebase.initialize_app(firebaseConfig)
