@@ -16,7 +16,7 @@ firebase = pyrebase.initialize_app(firebaseConfig)
 
 db = firebase.database()
 
-notes_collection = db.child('notes')
+races_collection = db.child('events')
 
 
 

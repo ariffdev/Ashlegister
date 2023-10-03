@@ -1,61 +1,66 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from schema.note import Note
-from config.firebase_config import notes_collection
+from schema.race import Race
+from config.firebase_config import races_collection
 
 
 
-app = FastAPI(title="Notes App API")
+app = FastAPI(title="Ashlegister API")
 
-@app.get('/', response_class=HTMLResponse, tags=['Notes'])
+@app.get('/', response_class=HTMLResponse, tags=['Races'])
 async def index():
   return  """
   <html>
   <body>
-  <h1> Welcome to the Notes API </h1>
+  <h1> Welcome to the Races API </h1>
   </body>
   </html>
   """
 
 
 #Create
-@app.post('/notes', tags=['Notes'])
-def create_new_note(note: Note):
-  note = dict(note)
-  note_collection.child(note['id']).set(note)
-  return {"message":"Note added successfully", 'note': note}
+@app.post('/races', tags=['Races'])
+def create_new_race(race: Race):
+  race = dict(race)
+  race_collection.child(race['id']).set(race)
+  return {"message":"Race added successfully", 'race': race}
 
 #Read
-@app.get('/notes', tags=['Notes'])
-def get_all_notes():
-  notes = note_collection.get().val()
-  return notes
+@app.get('/races', tags=['Races'])
+def get_all_races():
+  races = race_collection.get().val()
+  return races
 
-@app.get('/notes/{note_id}', tags=['Notes'])
-def get_note(note_id: int):
-  notes = note_collection.get().val()
-  for note in notes:
-    if note['id'] == note_id:
-      return note
+@app.get('/races/{race_id}', tags=['Races'])
+def get_race(race_id: int):
+  races = race_collection.get().val()
+  for race in races:
+    if race['id'] == race_id:
+      return race
   return {'error':"Item doesn't exist"}
 
 
 
 #Update
-@app.put('/notes/{note_id}', tags=['Notes'])
-def update_note(note_id: int, new_note: Note):
-  new_note = dict(new_note)
-  db.child('notes').child(new_note['id']).update(new_note)
+@app.put('/races/{race_id}', tags=['Races'])
+def update_race(race_id: int, new_race: Race):
+  new_race = dict(new_race)
+  db.child('races').child(new_race['id']).update(new_race)
   return {
-    'Message': 'Successfully update note',
-    'New Note': db.child('notes').child(new_note['id']).get().val()
+    'Message': 'Successfully update race',
+    'New Race': db.child('races').child(new_race['id']).get().val()
   }
 
 
 #Delete
-@app.delete('/notes/{note_id}', tags=['Notes'])
-def delete_note(note_id: int):
-  note_collection.child(note_id).remove()
+@app.delete('/races/{race_id}', tags=['Races'])
+def delete_race(race_id: int):
+  race_collection.child(race_id).remove()
   return {
-    'Message': 'Successfully deleted note',
+    'Message': 'Successfully deleted race',
   }
+
+
+@app.post('/signup')
+async def create_an_account():
+  pass
