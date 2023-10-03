@@ -14,7 +14,7 @@ class Race(BaseModel):
               {
                   "id": 4,
                   "race_distance": "100m",
-                  "race_type": 35.4,
+                  "race_type": 'final',
                   "results":[]
               }
           ]

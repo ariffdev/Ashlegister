@@ -5,6 +5,7 @@ from config.firebase_config import races_collection
 
 
 
+
 app = FastAPI(title="Ashlegister API")
 
 @app.get('/', response_class=HTMLResponse, tags=['Races'])
@@ -61,6 +62,17 @@ def delete_race(race_id: int):
   }
 
 
-@app.post('/signup')
+### AUTH ###
+@app.post('/signup', tags=["Account"])
 async def create_an_account():
+  pass
+
+
+@app.post('/login', tags=["Account"])
+async def create_access_token(): #or login
+  pass
+
+
+@app.post('/ping', tags=["Account"])
+async def validate_token():
   pass
