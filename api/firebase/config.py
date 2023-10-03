@@ -1,3 +1,5 @@
+from firebase_admin import credentials
+import firebase_admin
 import pyrebase
 
 
@@ -12,11 +14,22 @@ firebaseConfig = {
     'measurementId': "G-H28JXVHWSE"
 }
 
+# Initialize app
 firebase = pyrebase.initialize_app(firebaseConfig)
 
-db = firebase.database()
 
+# Firebase Realtime Database Config
+db = firebase.database()
 races_collection = db.child('events')
+
+
+# Firebase Auth Config
+if not firebase_admin._apps:
+  cred = credentials.Certificate("./ashlegister-venv/serviceAccountKey.json")
+  firebase_admin.initialize_app(cred)
+
+
+
 
 
 

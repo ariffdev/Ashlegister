@@ -1,22 +1,11 @@
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
 from schema.race import Race
-from config.firebase_config import races_collection
+from firebase.config import races_collection
 
 
 
+app = FastAPI(title="Ashlegister API", docs_url='/')
 
-app = FastAPI(title="Ashlegister API")
-
-@app.get('/', response_class=HTMLResponse, tags=['Races'])
-async def index():
-  return  """
-  <html>
-  <body>
-  <h1> Welcome to the Races API </h1>
-  </body>
-  </html>
-  """
 
 
 #Create
