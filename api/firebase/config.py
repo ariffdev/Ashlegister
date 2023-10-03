@@ -1,18 +1,24 @@
 from firebase_admin import credentials
 import firebase_admin
 import pyrebase
+import json
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-firebaseConfig = {
-    'apiKey': "AIzaSyC5rOaw20XOw2NpkLr3DcvMURysMTmAMMc",
-    'authDomain': "ashlegister.firebaseapp.com",
-    'databaseURL': "https://ashlegister-default-rtdb.firebaseio.com",
-    'projectId': "ashlegister",
-    'storageBucket': "ashlegister.appspot.com",
-    'messagingSenderId': "872176779830",
-    'appId': "1:872176779830:web:024e117c9a8b0facbd4e97",
-    'measurementId': "G-H28JXVHWSE"
-}
+# Extracting firebase sensitive environment variables from .env file
+firebaseConfig = os.getenv('firebaseConfig') #retrieve firebase config files as string 
+firebaseConfig = json.loads(firebaseConfig)  # deserialize / convert from string to dict
+
+serviceAccountKey = os.getenv('serviceAccountKey')
+serviceAccountKey = json.loads(serviceAccountKey)
+print(serviceAccountKey)
+
+#Generating the serviceAccountKey.json file in the current directory
+with open("serviceAccountKey.json", 'w') as outfile:
+  json.dump(serviceAccountKey, outfile)
+
 
 # Initialize app
 firebase = pyrebase.initialize_app(firebaseConfig)
@@ -25,7 +31,7 @@ races_collection = db.child('events')
 
 # Firebase Auth Config
 if not firebase_admin._apps:
-  cred = credentials.Certificate("./ashlegister-venv/serviceAccountKey.json")
+  cred = credentials.Certificate('serviceAccountKey.json')
   firebase_admin.initialize_app(cred)
 
 
