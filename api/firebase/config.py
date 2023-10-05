@@ -1,4 +1,4 @@
-from firebase_admin import credentials
+from firebase_admin import credentials, auth
 import firebase_admin
 import pyrebase
 import json
@@ -13,14 +13,14 @@ firebaseConfig = json.loads(firebaseConfig)  # deserialize / convert from string
 
 serviceAccountKey = os.getenv('serviceAccountKey')
 serviceAccountKey = json.loads(serviceAccountKey)
-print(serviceAccountKey)
+
 
 #Generating the serviceAccountKey.json file in the current directory
 with open("serviceAccountKey.json", 'w') as outfile:
   json.dump(serviceAccountKey, outfile)
 
 
-# Initialize app
+# Initialize Firebase app
 firebase = pyrebase.initialize_app(firebaseConfig)
 
 

@@ -1,6 +1,11 @@
-from fastapi import FastAPI
-from schema.race import Race
-from firebase.config import races_collection
+from fastapi import FastAPI, Request
+from models.models import Race, SignUpSchema, LoginSchema
+from firebase.config import races_collection, firebase
+from fastapi.responses import JSONResponse
+from fastapi.exceptions import HTTPException
+
+
+from firebase_admin import credentials, auth
 
 
 
@@ -53,15 +58,59 @@ def delete_race(race_id: int):
 
 ### AUTH ###
 @app.post('/signup', tags=["Account"])
-async def create_an_account():
-  pass
+async def create_an_account(user_data: SignUpSchema):
+  email = user_data.email
+  password = user_data.password
+
+  try:
+    user = auth.create_user(
+      email=email,
+      password=password
+    )
+
+    return JSONResponse(content={
+      "message":f"User Account created successfully for {user.uid}"
+    }, status_code=200)
+  except auth.EmailAlreadyExistsError:
+    raise HTTPException(
+      status_code=400,
+      detail=f"Account already created for the email {email}"
+    )
+    
 
 
 @app.post('/login', tags=["Account"])
-async def create_access_token(): #or login
-  pass
+async def create_access_token(user_data: LoginSchema): #or login
+  email = user_data.email
+  password = user_data.password
+
+  try:
+    user = firebase.auth().sign_in_with_email_and_password(
+      email=email,
+      password=password
+      )
+
+    token = user['idToken']
+
+    return JSONResponse(
+    content={
+      'token':token
+    }, status_code=200
+      )
+  except:
+    raise HTTPException(
+      status_code=400,
+      detail="Invalid credentials"
+    )
+    
 
 
 @app.post('/ping', tags=["Account"])
-async def validate_token():
-  pass
+async def validate_token(request:Request):
+  headers = request.headers
+  jwt = headers.get('authorization')
+
+  user = auth.verify_id_token(jwt)
+
+  return user['uid']
+  
