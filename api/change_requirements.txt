@@ -1,0 +1,6 @@
+#The requirement versions that need to be set to deploy and run on render
+
+uvicorn==0.22.0
+cffi==1.15.1
+typing_extensions==4.7.1
+
