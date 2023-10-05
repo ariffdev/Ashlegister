@@ -4,4 +4,5 @@ uvicorn==0.22.0
 cffi==1.15.1
 typing_extensions==4.7.1
 mgspack==1.0.5
+python-dotenv==0.21.1
 
