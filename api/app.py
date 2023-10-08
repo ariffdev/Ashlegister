@@ -1,11 +1,11 @@
 from fastapi import FastAPI, Request
 from models.models import Race, SignUpSchema, LoginSchema
-from firebase.config import races_collection, firebase
+from firebase.db import races_collection, firebase
+from firebase.admins import ashlegister_admins
+from firebase_admin import credentials, auth
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import HTTPException
 
-
-from firebase_admin import credentials, auth
 
 
 
@@ -63,6 +63,7 @@ async def create_an_account(user_data: SignUpSchema):
   password = user_data.password
 
   try:
+    global user
     user = auth.create_user(
       email=email,
       password=password
@@ -81,6 +82,7 @@ async def create_an_account(user_data: SignUpSchema):
 
 @app.post('/login', tags=["Account"])
 async def create_access_token(user_data: LoginSchema): #or login
+  global email 
   email = user_data.email
   password = user_data.password
 
@@ -89,8 +91,10 @@ async def create_access_token(user_data: LoginSchema): #or login
       email=email,
       password=password
       )
+    
 
     token = user['idToken']
+    
 
     return JSONResponse(
     content={
@@ -113,4 +117,14 @@ async def validate_token(request:Request):
   user = auth.verify_id_token(jwt)
 
   return user['uid']
+
+
+@app.get('/admins_only')
+async def check_account_type():
+  global account_type
+  if email in ashlegister_admins: #email was made global from login endpoint
+    account_type = 'Admin'
+  else:
+    account_type = 'User'
+  return account_type
   
