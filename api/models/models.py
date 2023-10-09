@@ -2,46 +2,51 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 
-class Competition(BaseModel):
-  id: int
-  title: str
-  date: str
-  results: Optional[List]
-  races: Optional[List]
-
-  model_config = {
-      "json_schema_extra": {
-          "examples": [
-              {
-                  "id": 4,
-                  "title": "Ghana's Fastest Human - Cape Coast Meet",
-                  "date": "3rd September, 2023",
-                  "results": [],
-                  "races":[]
-              }
-          ]
-      }
-  }
-
-
 class Race(BaseModel):
-  id: int
+  competition_tag: str
+  race_tag: str
   race_distance: str
-  race_type: str #final, semi, etc
-  results: Optional[List]
+  race_type: str  # final, semi, etc
+  gender: str
+  Results: Optional[dict]
 
   model_config = {
       "json_schema_extra": {
           "examples": [
               {
-                  "id": 4,
+                  "competition_tag": 'diamondLXiamen23',
+                  "race_tag": "100mf",
                   "race_distance": "100m",
                   "race_type": 'final',
-                  "results":[]
+                  "gender": "M",
+                  "Results": {}
               }
           ]
       }
   }
+
+  
+
+
+class Competition(BaseModel):
+  competition_tag: str
+  title: str
+  date: str
+
+  model_config = {
+      "json_schema_extra": {
+          "examples": [
+              {
+                  "competition_tag": "diamondLXiamen23",
+                  "title": "2023 Xiamen Diamond League",
+                  "date": "3rd September, 2023",
+              }
+          ]
+      }
+  }
+
+
+
 
 
 class SignUpSchema(BaseModel):
@@ -58,6 +63,7 @@ class SignUpSchema(BaseModel):
             ]
         }
     }
+
 
 class LoginSchema(BaseModel):
     email:str
