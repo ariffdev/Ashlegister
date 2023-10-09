@@ -1,0 +1,90 @@
+
+
+*{
+  margin: 0;
+  color: var(--ashesi-maroon);
+}
+
+
+.login-page{
+  display: flex;
+}
+
+.side-section{
+  background-color: var(--ashesi-maroon);
+  height: 93vh;
+  width: calc(20vw);
+}
+
+.text-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-section{
+  background-color: var(--ashesi-dark);
+  height: 93vh;
+  width: 60vw;
+}
+
+.ashesi-logo{
+  margin-left: 10%;
+}
+
+.site-name{
+  font-size: 60px;
+  color: var(--ashesi-maroon);
+  font-weight: bold;
+  margin-top: 100px;
+}
+
+.login-title{
+  font-size: 64px;
+  color: var(--ashesi-maroon);
+}
+
+form{
+  margin-left: 40px;
+}
+
+
+label{
+  display: block;
+  justify-self: flex-start;
+}
+
+input{
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding-left: 5px;
+  height: 30px;
+  width: 50vw;
+  border-radius: 6px;
+  border: solid 4px var(--ashesi-maroon);
+  margin-bottom: 5px;
+  background-color: #404041 ;
+  display: block;
+}
+
+button{
+  margin-top: 5px;
+  height: 30px;
+  width: 80px;
+  margin-right: 5px;
+  background-color: var(--ashesi-maroon);
+  border: none;
+  border-radius: 5px;
+  color: var(--ashesi-dark);
+  font-weight: bold;
+}
+
+#login-btn{
+  margin-left: 30%;
+  margin-right: 10px;
+}
+
+
+

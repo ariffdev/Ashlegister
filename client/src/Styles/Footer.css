@@ -1,0 +1,20 @@
+.power-plug{
+  color: var(--ashesi-maroon)
+}
+
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 7vh;
+  width: 100vw;
+  background-color: #404041;
+
+}
+
+.powered{
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  color: white;
+}

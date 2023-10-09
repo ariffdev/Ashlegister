@@ -38,6 +38,9 @@ def create_new_competition(competition: Competition):
         update_competition(competition["competition_tag"], competition)
         return {"message": "Competition updated successfully", 'competition': competition}
     except KeyError:
+      db.child('Competitions').child(competition['competition_tag']).set(competition)
+      return {"message": "Competition added successfully", 'competition': competition}
+  else:
       db.child('Competitions').child(
           competition['competition_tag']).set(competition)
       return {"message": "Competition added successfully", 'competition': competition}

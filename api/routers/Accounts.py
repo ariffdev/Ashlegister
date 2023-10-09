@@ -1,14 +1,14 @@
 from fastapi import APIRouter, Request
+import pyrebase
 from models.models import LoginSchema, SignUpSchema
 from firebase.admins import ashlegister_admins
 from firebase_admin import credentials, auth
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import HTTPException
-
+from firebase.config import firebase
 
 
 router = APIRouter()
-
 
 ### AUTH ###
 @router.post('/signup', tags=["Account"])
@@ -26,6 +26,7 @@ async def create_an_account(user_data: SignUpSchema):
     return JSONResponse(content={
         "message": f"User Account created successfully for {user.uid}"
     }, status_code=200)
+
   except auth.EmailAlreadyExistsError:
     raise HTTPException(
         status_code=400,
