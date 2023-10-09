@@ -62,6 +62,17 @@ async def create_access_token(user_data: LoginSchema):  # or login
     )
 
 
+@router.get('/logout', tags=["Account"])
+async def log_out():  # or login
+  #log in with dummy account since there's no signout feature readily available
+  global email
+  email = "dummy@ashlegister.com"
+  password = "dummypass"
+  signed_out_user = firebase.auth().sign_in_with_email_and_password(email=email,password=password)
+  return {"message": "Logged out successfully"}
+
+
+
 @router.post('/ping', tags=["Account"])
 async def validate_token(request: Request):
   headers = request.headers
