@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
-from models.models import Race, SignUpSchema, LoginSchema
-from firebase.db import races_collection, firebase
+from models.models import Competition, Race, SignUpSchema, LoginSchema
+from firebase.db import db
+from firebase.config import firebase
 from firebase.admins import ashlegister_admins
 from firebase_admin import credentials, auth
 from fastapi.responses import JSONResponse
@@ -12,48 +13,55 @@ from fastapi.exceptions import HTTPException
 app = FastAPI(title="Ashlegister API", docs_url='/')
 
 
-
-#Create
-@app.post('/races', tags=['Races'])
-def create_new_race(race: Race):
-  race = dict(race)
-  race_collection.child(race['id']).set(race)
-  return {"message":"Race added successfully", 'race': race}
-
-#Read
-@app.get('/races', tags=['Races'])
-def get_all_races():
-  races = race_collection.get().val()
-  return races
-
-@app.get('/races/{race_id}', tags=['Races'])
-def get_race(race_id: int):
-  races = race_collection.get().val()
-  for race in races:
-    if race['id'] == race_id:
-      return race
-  return {'error':"Item doesn't exist"}
+""" COMPETITIONS """
 
 
+@app.get('/competitions', tags=['Competitions'])
+def get_all_competitions():
+  competitions = db.child('Competitions').get().val()
+  return competitions
 
-#Update
-@app.put('/races/{race_id}', tags=['Races'])
-def update_race(race_id: int, new_race: Race):
-  new_race = dict(new_race)
-  db.child('races').child(new_race['id']).update(new_race)
+
+@app.get('/competitions/{competition_id}', tags=['Competitions'])
+def get_competition(competition_id: int):
+  competitions = dict(db.child('Competitions').get().val())
+  try:
+    competition = competitions[str(competition_id)]
+    return(competition)
+  except IndexError:
+    return {'error': 'Item does not exist'}
+
+
+@app.post('/competitions', tags=['Competitions'])
+def create_new_competition(competition: Competition):
+  competition = dict(competition)
+  db.child('Competitions').child(competition['id']).set(competition) #As long the child is unique, it will create under Competitions
+  return {"message": "Competition added successfully", 'competition': competition}
+
+
+
+@app.put('/competitions/{competition_id}', tags=['Competitions'])
+def update_competition(competition_id: int, new_competition: Competition):
+  new_competition = dict(new_competition)
+  db.child('Competitions').child(new_competition['id']).update(new_competition)
   return {
-    'Message': 'Successfully update race',
-    'New Race': db.child('races').child(new_race['id']).get().val()
+      'Message': 'Successfully update competition',
+      'New Competition': db.child('Competitions').child(new_competition['id']).get().val()
   }
 
 
-#Delete
-@app.delete('/races/{race_id}', tags=['Races'])
-def delete_race(race_id: int):
-  race_collection.child(race_id).remove()
+@app.delete('/competitions/{competition_id}', tags=['Competitions'])
+def delete_competition(competition_id: int):
+  db.child('Competitions').child(competition_id).remove()
   return {
-    'Message': 'Successfully deleted race',
+      'Message': 'Successfully deleted competition',
   }
+
+
+
+""" RACES """
+
+
 
 
 ### AUTH ###

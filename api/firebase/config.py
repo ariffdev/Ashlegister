@@ -1,5 +1,6 @@
 import os
 import json
+import pyrebase
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -12,3 +13,6 @@ firebaseConfig = json.loads(firebaseConfig)
 
 serviceAccountKey = os.getenv('serviceAccountKey')
 serviceAccountKey = json.loads(serviceAccountKey)
+
+# Initialize Firebase app
+firebase = pyrebase.initialize_app(firebaseConfig)

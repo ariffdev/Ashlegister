@@ -1,13 +1,10 @@
-import pyrebase
-from firebase.config import firebaseConfig
-
-# Initialize Firebase app
-firebase = pyrebase.initialize_app(firebaseConfig)
-
+from firebase.config import firebase
 
 # Firebase Realtime Database Config
 db = firebase.database()
-races_collection = db.child('events')
+
+
+
 
 
 
