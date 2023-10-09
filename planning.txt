@@ -14,6 +14,6 @@ TO-DO
 =====
 [x] Create the routes based on this new plan
 [x] Modify database to fit this new structure
-[] Implement the access control by only allowing admins to CUD
+[x] Implement the access control by only allowing admins to CUD
 [x] Separate the endpoints into routes (grouping them accordingly) and connect all with API Router for better organization => {competitions.py, races.py, account.py}
 [] Figure out how to remove firebase realtime database from test mode so all can access forever

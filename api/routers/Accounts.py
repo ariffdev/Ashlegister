@@ -8,6 +8,8 @@ from fastapi.exceptions import HTTPException
 from firebase.config import firebase
 
 
+
+
 router = APIRouter()
 
 ### AUTH ###
@@ -70,11 +72,20 @@ async def validate_token(request: Request):
   return user['uid']
 
 
-@router.get('/admins_only', tags=['Account'])
-async def check_account_type():
+
+def check_account_type():
   global account_type
-  if email in ashlegister_admins:  # email was made global from login endpoint
-    account_type = 'Admin'
-  else:
-    account_type = 'User'
-  return account_type
+  try:
+    if email in ashlegister_admins:  # email was made global from login endpoint
+      account_type = 'Admin'
+    else:
+      account_type = 'User'
+    return account_type
+  except:
+    return {
+      'error': 'Log in first'
+    }
+
+
+
+

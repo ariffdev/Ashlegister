@@ -17,3 +17,4 @@ serviceAccountKey = json.loads(serviceAccountKey)
 # Initialize Firebase app
 firebase = pyrebase.initialize_app(firebaseConfig)
 
+

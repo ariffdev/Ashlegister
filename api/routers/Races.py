@@ -3,6 +3,8 @@ from fastapi import APIRouter
 from models.models import Race
 from firebase.db import db
 
+from .Accounts import check_account_type
+
 router = APIRouter(prefix="/competitions/{competition_tag}")
 
 # READ
@@ -31,26 +33,38 @@ def get_race_in_competition(competition_tag: str, race_tag: str):
 # CREATE
 @router.post('/races', tags=['Races'])
 def create_new_race_in_competition(competition_tag: str, race: Race):
-  race = dict(race)
-  db.child('Competitions').child(competition_tag).child(
-      'Races').child(race['race_tag']).set(race)
+  account_type = check_account_type()
+  if account_type != 'Admin':
+    return {'Error': 'Need Admin rights'}
+  else:
+    race = dict(race)
+    db.child('Competitions').child(competition_tag).child(
+        'Races').child(race['race_tag']).set(race)
 
 
 # UPDATE
 @router.put('/races/{race_tag}', tags=['Races'])
 def update_race(competition_tag: str, race_tag: str, new_race: Race):
-  new_race = dict(new_race)
-  db.child('Competitions').child(competition_tag).child(
-      'Races').child(race_tag).update(new_race)
-  return {
-      'Message': 'Successfully updated race'
-  }
+  account_type = check_account_type()
+  if account_type != 'Admin':
+    return {'Error': 'Need Admin rights'}
+  else:
+    new_race = dict(new_race)
+    db.child('Competitions').child(competition_tag).child(
+        'Races').child(race_tag).update(new_race)
+    return {
+        'Message': 'Successfully updated race'
+    }
 
 
 # DELETE
 @router.delete('/races/{race_tag}', tags=['Races'])
 def remove_race(competition_tag: str, race_tag: str):
-  db.child('Competitions').child(competition_tag).child('Races').child(race_tag).remove()
-  return {
-      'Message': 'Successfully deleted race',
-  }
+  account_type = check_account_type()
+  if account_type != 'Admin':
+    return {'Error': 'Need Admin rights'}
+  else:
+    db.child('Competitions').child(competition_tag).child('Races').child(race_tag).remove()
+    return {
+        'Message': 'Successfully deleted race',
+    }
