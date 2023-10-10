@@ -1,7 +1,7 @@
 import '../Styles/Competition.css'
 
+
 const Competition = ({competition}) => {
-  console.log(competition)
   return (
     <div className="Competition">
      <span className='competition-name'>{competition.competition_name.toUpperCase()}</span>
