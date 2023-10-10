@@ -3,10 +3,20 @@
 :root {
   --ashesi-maroon: #AD3537;
   --ashesi-dark: #2B2525;
+  --headerfootercolor: #242222;
+}
+
+*{
+  box-sizing: border-box;
 }
 
 body{
   font-family: 'Poppins', sans-serif;
   background-color: black;
   color: white;
+}
+
+main{
+  display: flex;
+  flex-direction: row;
 }

@@ -1,19 +1,4 @@
-New Route designs
-=================
-
-
-/competitions -> List of competitions from past, present and future =>  [R -> all users], [CUD -> admin only]
-
-/competitions/{competition_id} -> Yields full timetable and other data for specified competiton => [R -> all users], [CUD -> admin only]
-
-/competitions/{competition_id}/races/{race_id} -> Yield's specific race details => [R -> all users], [CUD -> admin only]
-
-
-
-TO-DO
-=====
-[x] Create the routes based on this new plan
-[x] Modify database to fit this new structure
-[x] Implement the access control by only allowing admins to CUD
-[x] Separate the endpoints into routes (grouping them accordingly) and connect all with API Router for better organization => {competitions.py, races.py, account.py}
-[] Figure out how to remove firebase realtime database from test mode so all can access forever
+Registrations
+=============
+Anyone can register (post)
+Only admin can view (get), update(put) or delete registrations

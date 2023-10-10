@@ -8,7 +8,7 @@ footer{
   justify-content: flex-end;
   height: 7vh;
   width: 100vw;
-  background-color: #404041;
+  background-color: var(--headerfootercolor);
 
 }
 

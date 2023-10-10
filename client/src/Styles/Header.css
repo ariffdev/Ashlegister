@@ -1,0 +1,42 @@
+
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7vh;
+  width: 100vw;
+  background-color: var(--headerfootercolor);
+  padding: 3px;
+
+}
+
+.header-logo{
+  height: 5vh;
+  margin-right: auto;
+  margin-left: 15px;
+}
+
+.app-title{
+  color: var(--ashesi-maroon);
+  margin-right: auto;
+  font-size: 26px;
+}
+
+.login-state-btn{
+  width: 120px;
+  margin-right: 15px;
+  color: var(--ashesi-dark);
+  font-weight: bold;
+  height: 40px;
+  border: none;
+  border-radius: 5%;
+  background-color: var(--ashesi-maroon);
+  cursor: pointer;
+}
+
+.login-state-btn:hover{
+  color: var(--ashesi-maroon);
+  background-color: var(--ashesi-dark);
+  border: solid var(--ashesi-maroon);
+}

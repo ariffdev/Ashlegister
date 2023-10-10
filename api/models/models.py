@@ -15,7 +15,7 @@ class Race(BaseModel):
           "examples": [
               {
                   "competition_tag": 'diamondLXiamen23',
-                  "race_tag": "100mf",
+                  "race_tag": "100mMf",
                   "race_distance": "100m",
                   "race_type": 'final',
                   "gender": "M",
@@ -40,6 +40,28 @@ class Competition(BaseModel):
                   "competition_tag": "diamondLXiamen23",
                   "title": "2023 Xiamen Diamond League",
                   "date": "3rd September, 2023",
+              }
+          ]
+      }
+  }
+
+
+class Registration(BaseModel):
+  competition_tag: str
+  name: str
+  email: str
+  races: List[str]
+  gender: str
+
+  model_config = {
+      "json_schema_extra": {
+          "examples": [
+              {
+                  "competition_tag": 'diamondLXiamen23',
+                  "name": "Hadid",
+                  "email": "abdul.ariff@ashesi.alumni.edu.gh",
+                  "races": ["100m","200m","400m"],
+                  "gender": "M",
               }
           ]
       }
