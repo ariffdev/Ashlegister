@@ -38,10 +38,6 @@ const Login = () => {
 
   return(
     <main className="login-page">
-      <div className='side-section'>
-        <img className='ashesi-logo' src="../src/assets/ashesi-logo.png" alt="Ashesi Logo" />
-      </div>
-
       <div className="main-section">
         <div className='text-section'>
           <p className='site-name'>ASHESI ATHLETICS</p>
@@ -60,8 +56,6 @@ const Login = () => {
         </form>
 
       </div>
-
-      <div className="side-section"></div>
     </main>
   )
 }

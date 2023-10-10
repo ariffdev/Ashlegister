@@ -1,13 +1,17 @@
 import '../Styles/SideNavbar.css'
+import { Link } from 'react-router-dom'
 
 
 const SideNavbar = () => {
 
-
   return(
     <section className="side-nav-bar">
-      <p className='nav-item'>Home</p>
-      <p className='nav-item'>Register</p>
+      <Link className='nav-item' to="/home">Home</Link>
+
+      <Link className='nav-item' to="/registration"> Registration </Link>
+
+      <Link className='nav-item login-btn' to="/login"> Login as Admin </Link>
+
     </section>
   )
 }

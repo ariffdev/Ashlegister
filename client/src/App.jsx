@@ -5,6 +5,7 @@ import SideNavbar from "./Components/SideNavbar"
 import ContentArea from "./Components/ContentArea"
 
 
+
 const App = () => {
 
   return (
@@ -13,7 +14,7 @@ const App = () => {
       <main>
         <SideNavbar/>
         {/* Start router here */}
-        <ContentArea/>
+          <ContentArea/>
         {/* End router here */}
         <Sidebar/>
       </main>

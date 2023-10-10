@@ -17,13 +17,8 @@
   width: 300px;
 }
 
-/* .nav-item{
-  color: var(--ashesi-dark);
-
-  text-decoration: underline;
-} */
-
-.nav-item {
+/* Styling Links from React Router */
+.nav-item, a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,11 +33,21 @@
   border: solid var(--ashesi-dark);
 }
 
-.nav-item:hover {
+.nav-item:hover, a {
   color: var(--ashesi-maroon);
   background-color: var(--ashesi-dark);
   border: solid var(--ashesi-maroon);
   cursor: pointer;
+}
+
+
+a{
+  text-decoration: none;
+
+}
+
+.login-btn{
+  width: 150px;
 }
 
 
