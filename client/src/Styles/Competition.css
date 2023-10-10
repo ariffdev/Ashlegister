@@ -1,0 +1,31 @@
+
+.Competition{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100px;
+  width: 400px;
+  border: solid 2px var(--ashesi-maroon);
+  color: var(--ashesi-maroon);
+  border-radius: 5%;
+  background-color: var(--ashesi-dark);
+  margin-top: 25px;
+}
+
+.competition-name{
+  font-size: 18px;
+}
+
+.Competition:hover{
+  background-color: teal;
+  border: solid 2px white;
+  cursor: pointer;
+
+  .competition-name,
+    .competition-date {
+      color: white;
+    }
+  
+}
+
