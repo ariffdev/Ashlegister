@@ -18,7 +18,7 @@
 }
 
 /* Styling Links from React Router */
-.nav-item, a {
+.nav-item{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@
   border: solid var(--ashesi-dark);
 }
 
-.nav-item:hover, a {
+.nav-item:hover{
   color: var(--ashesi-maroon);
   background-color: var(--ashesi-dark);
   border: solid var(--ashesi-maroon);

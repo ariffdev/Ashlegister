@@ -23,16 +23,13 @@ const Home = ({retrievedCompetitions}) => {
   })
 
   let competitionList = competition_details.map(competition => {
-    <Competition key={competition['competition_tag']} competition={competition}/>
+    return(
+    <Link to={`races/${competition.competition_tag}`} key={competition['competition_tag']}>
+      <Competition  competition={competition}/>
+    </Link>
+    )
   } )
 
-
-  
-  // let competitionList = competition_details.map(competition => {
-  //   <Link to={`races/${competition.competition_tag}`}>
-  //     <Competition key={competition.competition_tag} competition={competition}/>
-  //   </Link>
-  // } )
 
   return (
     <div className="HomeRoute">
