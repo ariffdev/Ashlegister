@@ -1,0 +1,40 @@
+.Race{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title{
+  margin-top: 20px;
+}
+
+
+
+.race {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100px;
+  width: 400px;
+  border: solid 2px var(--ashesi-maroon);
+  color: var(--ashesi-maroon);
+  border-radius: 5%;
+  background-color: var(--ashesi-dark);
+  margin-top: 25px;
+}
+
+.race-title {
+  font-size: 18px;
+}
+
+.race:hover {
+  background-color: teal;
+  border: solid 2px white;
+  cursor: pointer;
+
+  .race-title{
+    color: white;
+  }
+
+}

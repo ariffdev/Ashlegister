@@ -5,9 +5,10 @@ from typing import List, Optional
 class Race(BaseModel):
   competition_tag: str
   race_tag: str
-  race_distance: str
-  race_type: str  # final, semi, etc
+  distance: str
+  title: str
   gender: str
+  stage: str
   Results: Optional[dict]
 
   model_config = {
@@ -15,10 +16,11 @@ class Race(BaseModel):
           "examples": [
               {
                   "competition_tag": 'diamondLXiamen23',
-                  "race_tag": "100mMf",
-                  "race_distance": "100m",
-                  "race_type": 'final',
+                  "race_tag": "M100mFinal",
+                  "title": "Men's 100m Final",
+                  "distance": "100m",
                   "gender": "M",
+                  "stage": "Final",
                   "Results": {}
               }
           ]

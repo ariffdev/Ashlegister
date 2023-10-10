@@ -24,7 +24,7 @@ const Home = ({retrievedCompetitions}) => {
 
   let competitionList = competition_details.map(competition => {
     return(
-    <Link to={`races/${competition.competition_tag}`} key={competition['competition_tag']}>
+    <Link to={`/races/${competition.competition_tag}`} key={competition['competition_tag']}>
       <Competition  competition={competition}/>
     </Link>
     )
