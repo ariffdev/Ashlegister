@@ -13,14 +13,15 @@ header{
 
 .header-logo{
   height: 5vh;
-  margin-right: auto;
+  margin-right: calc(50% - 280px);
   margin-left: 15px;
 }
 
 .app-title{
   color: var(--ashesi-maroon);
   margin-right: auto;
-  font-size: 26px;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 

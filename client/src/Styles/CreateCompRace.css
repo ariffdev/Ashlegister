@@ -1,61 +1,49 @@
+.create-competition{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
+.page-title{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 
-*{
+* {
   margin: 0;
   color: var(--ashesi-maroon);
 }
 
 
-.login-page{
-  display: flex;
-}
-
-.side-section{
-  background-color: var(--ashesi-maroon);
-  height: 93vh;
-  width: calc(20vw);
-}
-
-.text-section{
+.text-section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
-.main-section{
+.main-section {
   background-color: var(--ashesi-dark);
   height: 93vh;
   width: 60vw;
 }
 
-.ashesi-logo{
-  margin-left: 10%;
-}
 
-.site-name{
-  font-size: 60px;
-  color: var(--ashesi-maroon);
-  font-weight: bold;
-  margin-top: 100px;
-}
 
-.login-title{
-  font-size: 64px;
-  color: var(--ashesi-maroon);
-}
 
-form{
+
+form {
   margin-left: 40px;
 }
 
 
-label{
+label {
   display: block;
   justify-self: flex-start;
 }
 
-input{
+input {
   color: white;
   font-weight: bold;
   font-size: 16px;
@@ -64,15 +52,15 @@ input{
   width: 50vw;
   border-radius: 6px;
   border: solid 4px var(--ashesi-maroon);
-  margin-bottom: 5px;
-  background-color: #404041 ;
+  margin-bottom: 20px;
+  background-color: #404041;
   display: block;
 }
 
-button{
+button {
   margin-top: 5px;
   height: 30px;
-  width: 80px;
+  width: 180px;
   margin-right: 5px;
   background-color: var(--ashesi-maroon);
   border: none;
@@ -81,21 +69,11 @@ button{
   font-weight: bold;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
 }
 
-#login-btn{
-  margin-left: 35%;
+#create-btn {
+  margin-left: 20%;
   margin-right: 10px;
 }
-
-.log-message{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-}
-
-
-
