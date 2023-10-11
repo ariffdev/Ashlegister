@@ -76,6 +76,14 @@ button:hover {
   font-weight: bold;
 }
 
+#competition_tag,
+#competition_title,
+#competition_date{
+  background-color: white;
+  color: var(--ashesi-maroon);
+  border: solid 4px var(--ashesi-maroon);
+}
+
 
 .success {
   display: flex;

@@ -63,7 +63,7 @@ const CreateCompetition = () => {
           <input type="text" name='competition_tag' id='competition_tag' />
 
           <p>Competition Date</p>
-          <DatePicker selected={competitionDate} onChange={(date)=> setCompetitionDate(date)}/>
+          <DatePicker id='competition_date' selected={competitionDate} onChange={(date)=> setCompetitionDate(date)}/>
 
           <button onClick={handleCreateCompetition} id='create-btn' type='button'>CREATE COMPETITION</button>
         </form>
