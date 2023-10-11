@@ -1,7 +1,8 @@
-import '../Styles/CreateCompetition.css'
+
 import axios from 'axios'
 import DatePicker from 'react-datepicker'
 import { useState } from 'react'
+import '../Styles/CreateCompetition.css'
 
 import 'react-datepicker/dist/react-datepicker.css'
 

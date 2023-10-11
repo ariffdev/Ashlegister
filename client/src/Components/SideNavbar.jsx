@@ -15,11 +15,9 @@ const SideNavbar = ({loginState}) => {
   return(
     <section className="side-nav-bar">
 
-        <button className='nav-item' onClick={() => window.location.reload(false)}>
-          <Link className='home-btn' to="/home">
-            Home
-          </Link>
-        </button>
+       <Link className='home-btn nav-item' to="/home" onClick={() => setTimeout(()=>window.location.reload(false),100)}> {/*Timeout to avoid refreshing on Races page before going to Home */}
+        Home
+      </Link>
 
 
       {logAction.map(item => {

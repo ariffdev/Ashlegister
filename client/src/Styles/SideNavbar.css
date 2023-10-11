@@ -42,8 +42,13 @@
 }
 
 .home-btn{
-  color: var(--ashesi-dark)
+  color: var(--ashesi-dark);
 }
+
+.home-btn:hover{
+  color: var(--ashesi-maroon);
+}
+
 
 
 a{

@@ -6,7 +6,6 @@ import Competition from '../Components/Competition';
 
 
 const Home = ({retrievedCompetitions}) => {
-
   let competition_tags = Object.keys(retrievedCompetitions)
 
   let competition_details = []

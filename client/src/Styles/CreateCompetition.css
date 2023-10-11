@@ -32,10 +32,6 @@
   width: 60vw;
 }
 
-.time-region{
-  display: inline;
-}
-
 
 
 form {
@@ -48,8 +44,8 @@ label {
   justify-self: flex-start;
 }
 
-input, 
-select {
+input{
+  color: white;
   font-weight: bold;
   font-size: 16px;
   padding-left: 5px;
@@ -58,9 +54,7 @@ select {
   border-radius: 6px;
   border: solid 4px var(--ashesi-maroon);
   margin-bottom: 20px;
-  background: white;
   display: block;
-  color: var(--ashesi-maroon);
 }
 
 button:hover {
@@ -76,8 +70,6 @@ button:hover {
   margin-top: 10px;
   height: 30px;
   width: 180px;
-  margin-right: 5px;
-  background-color: var(--ashesi-maroon);
   border: none;
   border-radius: 5px;
   color: var(--ashesi-dark);
