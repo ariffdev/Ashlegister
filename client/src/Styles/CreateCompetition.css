@@ -29,7 +29,9 @@
   width: 60vw;
 }
 
-
+.time-region{
+  display: inline;
+}
 
 
 
@@ -43,8 +45,8 @@ label {
   justify-self: flex-start;
 }
 
-input {
-  color: white;
+input, 
+select {
   font-weight: bold;
   font-size: 16px;
   padding-left: 5px;
@@ -53,12 +55,13 @@ input {
   border-radius: 6px;
   border: solid 4px var(--ashesi-maroon);
   margin-bottom: 20px;
-  background-color: #404041;
+  background: white;
   display: block;
 }
 
 button {
-  margin-top: 5px;
+  display: block;
+  margin-top: 10px;
   height: 30px;
   width: 180px;
   margin-right: 5px;
@@ -74,6 +77,9 @@ button:hover {
 }
 
 #create-btn {
+  background-color: var(--ashesi-maroon);
   margin-left: 20%;
   margin-right: 10px;
 }
+
+

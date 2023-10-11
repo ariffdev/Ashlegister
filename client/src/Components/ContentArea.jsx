@@ -21,7 +21,7 @@ const ContentArea = ({retrievedCompetitions, loginState, changeLoginState}) => {
         <Route path='/logout' element={<Logout changeLoginState={changeLoginState}/>}/>
         <Route path='/dashboard' element={<AdminDashboard/>}/>
         <Route path='/create-competition' element={<CreateCompetition/>}/>
-        <Route path='/create-race' element={<CreateRace/>}/>
+        <Route path='/create-race' element={<CreateRace retrievedCompetitions={retrievedCompetitions}/>}/>
         <Route path='/races/:competition_tag' element={<Races loginState={loginState} retrievedCompetitions={retrievedCompetitions}/>}/>
       </Routes>
     </section>

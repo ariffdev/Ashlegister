@@ -1,4 +1,4 @@
-import '../Styles/CreateCompRace.css'
+import '../Styles/CreateCompetition.css'
 import axios from 'axios'
 import DatePicker from 'react-datepicker'
 import { useState } from 'react'

@@ -65,7 +65,7 @@ input{
   border-radius: 6px;
   border: solid 4px var(--ashesi-maroon);
   margin-bottom: 5px;
-  background-color: #404041 ;
+  background: white ;
   display: block;
 }
 
@@ -86,6 +86,7 @@ button:hover{
 }
 
 #login-btn{
+  background-color: var(--ashesi-maroon);
   margin-left: 35%;
   margin-right: 10px;
 }

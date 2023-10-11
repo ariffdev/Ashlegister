@@ -1,0 +1,82 @@
+.create-competition {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+* {
+  margin: 0;
+  color: var(--ashesi-maroon);
+}
+
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-section {
+  background-color: var(--ashesi-dark);
+  height: 93vh;
+  width: 60vw;
+}
+
+.time-region {
+  display: inline;
+}
+
+
+
+form {
+  margin-left: 40px;
+}
+
+
+label {
+  display: block;
+  justify-self: flex-start;
+}
+
+input,
+select {
+  font-weight: bold;
+  font-size: 16px;
+  padding-left: 5px;
+  height: 30px;
+  width: 50vw;
+  border-radius: 6px;
+  border: solid 4px var(--ashesi-maroon);
+  margin-bottom: 20px;
+  background: white;
+  display: block;
+}
+
+
+button:hover {
+  cursor: pointer;
+}
+
+#create-btn {
+  background-color: var(--ashesi-maroon);
+  margin-left: 20%;
+  margin-right: 10px;
+
+  display: block;
+  margin-top: 10px;
+  height: 30px;
+  width: 180px;
+  margin-right: 5px;
+  background-color: var(--ashesi-maroon);
+  border: none;
+  border-radius: 5px;
+  color: var(--ashesi-dark);
+  font-weight: bold;
+}
