@@ -45,7 +45,6 @@ const CreateCompetition = () => {
       })
   } 
 
-  let competition_form = 
 
   return(
     <div className="create-competition">
