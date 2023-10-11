@@ -9,9 +9,7 @@ class Race(BaseModel):
   title: str
   gender: str
   stage: str
-  date:str
   time: str
-  Results: Optional[dict]
 
   model_config = {
       "json_schema_extra": {
@@ -25,7 +23,6 @@ class Race(BaseModel):
                   "stage": "Final",
                   "date": "3rd September 2023",
                   "time": "15:00",
-                  "Results": {}
               }
           ]
       }

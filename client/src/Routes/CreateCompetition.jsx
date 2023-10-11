@@ -78,8 +78,8 @@ const CreateCompetition = () => {
     )
   } else if(pageView ==='Success'){
     return(
-      <div>
-        Competition Created Successfully
+      <div className='success'>
+        COMPETITION CREATED SUCCESSFULLY
       </div>
     )
   }

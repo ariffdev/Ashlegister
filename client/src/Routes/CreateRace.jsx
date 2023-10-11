@@ -1,4 +1,4 @@
-import '../Styles/CreateCompRace.css'
+import '../Styles/CreateRace.css'
 import axios from 'axios'
 
 
@@ -26,7 +26,6 @@ const CreateCompetition = ({retrievedCompetitions}) => {
     const stage = document.getElementById('stage_selector').value;
     const race_tag = gender + distance + stage;
     const title = gender + " " + distance + " " + stage;
-    console.log(typeof raceTime)
     sendRaceToBackend(competition_tag, distance, gender, race_tag, title, stage)
   }  
 
@@ -42,6 +41,7 @@ const CreateCompetition = ({retrievedCompetitions}) => {
       'stage':stage,
       'time': raceTime.toString()
     }
+    console.log(race.time)
     
     axios
       .post(API_URL + `/competitions/${competition_tag}/races`, race)
@@ -135,8 +135,8 @@ const CreateCompetition = ({retrievedCompetitions}) => {
     )
   } else if(pageView ==='Success'){
     return(
-      <div>
-        Race Created Successfully
+      <div className='success'>
+        RACE CREATED SUCCESSFULLY
       </div>
     )
   }

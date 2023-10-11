@@ -80,3 +80,13 @@ button:hover {
   color: var(--ashesi-dark);
   font-weight: bold;
 }
+
+.success{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 36px;
+  margin-top: 20%;
+  font-weight: bold;
+}

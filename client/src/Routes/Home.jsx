@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import Competition from '../Components/Competition';
 
 
-
 const Home = ({retrievedCompetitions}) => {
+
   let competition_tags = Object.keys(retrievedCompetitions)
 
   let competition_details = []
@@ -30,15 +30,28 @@ const Home = ({retrievedCompetitions}) => {
     )
   } )
 
+  if(competitionList !== undefined){
+    return (
+      <div className="HomeRoute">
+        <h1 className="home-title">
+          COMPETITION LIST
+        </h1>
+        {competitionList}
+      </div>
+    )
+  } else{
+    return(
+      <div className="HomeRoute">
+        <h1 className="home-title">
+          COMPETITION LIST
+        </h1>
+        <div>
+          NO COMPETITIONS YET
+        </div>
+      </div>
+    )
+  }
 
-  return (
-    <div className="HomeRoute">
-      <h1 className="home-title">
-        COMPETITION LIST
-      </h1>
-      {competitionList}
-    </div>
-  )
 }
 
 export default Home

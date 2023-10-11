@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const SideNavbar = ({loginState}) => {
+
   let logAction
   if(loginState == false){
     logAction = [<Link key={0} className='nav-item login-btn' to="/login"> Login as Admin </Link>]
@@ -13,7 +14,13 @@ const SideNavbar = ({loginState}) => {
 
   return(
     <section className="side-nav-bar">
-      <Link className='nav-item' to="/home">Home</Link>
+
+        <button className='nav-item' onClick={() => window.location.reload(false)}>
+          <Link className='home-btn' to="/home">
+            Home
+          </Link>
+        </button>
+
 
       {logAction.map(item => {
         return(

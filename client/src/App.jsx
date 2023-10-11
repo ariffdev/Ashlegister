@@ -15,6 +15,7 @@ const App = () => {
   const [retrievedCompetitions, setRetrievedCompetitions] = useState([])
   const [loginState, setLoginState] = useState(false)
 
+
   const changeLoginState = (new_state) => {
     setLoginState(new_state)
   }
