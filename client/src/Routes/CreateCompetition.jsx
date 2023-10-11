@@ -9,6 +9,7 @@ const API_URL = 'http://127.0.0.1:8000';
 
 const CreateCompetition = () => {
   const [competitionDate, setCompetitionDate] = useState(new Date())
+  const [pageView, setPageView] = useState('Form') //variable for controlling the display mode
 
   const handleForm = (event) => {
     event.preventDefault();
@@ -22,8 +23,8 @@ const CreateCompetition = () => {
     // Resetting the input values
     document.getElementById('competition_tag').value = ''
     document.getElementById('competition_title').value = ''
-
   }  
+
 
     const sendCompetitionToBackend = (competition_tag, title, competitionDate) => {
     const competition = 
@@ -38,6 +39,7 @@ const CreateCompetition = () => {
       .then(response => {
         if(response.status === 200){
             console.log(response)
+            setPageView('Success')
         }
       })
       .catch(() => {
@@ -45,9 +47,8 @@ const CreateCompetition = () => {
       })
   } 
 
-
-  return(
-    <div className="create-competition">
+  let competition_form =     
+  <div className="create-competition">
       <div className="main-section">
         <div className='text-section'>
           <p className='page-title'>CREATE COMPETITION</p>
@@ -67,7 +68,22 @@ const CreateCompetition = () => {
         </form>
         </div>
     </div>
-  )
+
+
+  if(pageView === 'Form'){
+    return(
+      <div>
+        {competition_form}
+      </div>
+    )
+  } else if(pageView ==='Success'){
+    return(
+      <div>
+        Competition Created Successfully
+      </div>
+    )
+  }
+
 }
 
 export default CreateCompetition
