@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100px;
+  height: 50px;
   width: 400px;
   border: solid 2px var(--ashesi-maroon);
   color: var(--ashesi-maroon);

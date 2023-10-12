@@ -39,7 +39,12 @@ const CreateRace = ({retrievedCompetitions}) => {
       'race_tag':race_tag,
       'title': title,
       'stage':stage,
-      'time': raceTime.toString()
+      'time': raceTime.toString(),
+      'Results':{
+        'Results':{
+            
+        }
+      }
     }
     
     axios

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import Competitions, Accounts, Races, Athletes
+from routers import Competitions, Accounts, Races, Athletes, Results
 from firebase.auth import create_firebase_auth_app
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -19,10 +19,13 @@ app.add_middleware(
   allow_headers=["*"]
 )
 
+app.include_router(Accounts.router)
 app.include_router(Competitions.router)
 app.include_router(Athletes.router)
 app.include_router(Races.router)
-app.include_router(Accounts.router)
+app.include_router(Results.router)
+
+
 
 
 create_firebase_auth_app()

@@ -21,7 +21,7 @@ const Races = ({retrievedCompetitions}) => {
         gender: races[race_tag]['gender'],
         distance: races[race_tag]['distance'],
         stage: races[race_tag]['stage'],
-        title: races[race_tag]['title']
+        title: races[race_tag]['title'],
       }
       )
     })
@@ -36,7 +36,10 @@ const Races = ({retrievedCompetitions}) => {
       )
     })
   }else{
-    rendering_races = "NO RACES YET"
+    rendering_races = 
+    <div className="none-yet">
+          NO RACES YET
+    </div>
   }
 
   

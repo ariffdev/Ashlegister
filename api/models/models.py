@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 
 class Race(BaseModel):
@@ -10,6 +10,7 @@ class Race(BaseModel):
   gender: str
   stage: str
   time: str
+  Results: Dict[str, Dict]
 
   model_config = {
       "json_schema_extra": {
@@ -23,6 +24,11 @@ class Race(BaseModel):
                   "stage": "Final",
                   "date": "3rd September 2023",
                   "time": "15:00",
+                  'Results': {
+                      'Results': {
+
+                      }
+                  }
               }
           ]
       }
@@ -65,6 +71,32 @@ class Athlete(BaseModel):
           ]
       }
   }
+
+class Result(BaseModel):
+    competition_tag: str
+    race_tag: str
+    Results: Dict[str, Dict]
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                {
+                    "competition_tag": 'diamondLXiamen23',
+                    "race_tag": "Men's100mPrelims",
+                    "Results": {
+                        "Mihambo":{
+                            "mark": "34",
+                            "position": "2"
+                        },
+                        "Mikasa": {
+                            "mark": "356",
+                            "position": "1"
+                        },
+                    }
+                }
+            ]
+        }
+    }
 
 
 
