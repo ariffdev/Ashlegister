@@ -5,6 +5,7 @@ const RacePage = ({retrievedCompetitions}) => {
     let {competition_tag, race_tag} = useParams();
   // if logged in as admin, show race information and additional buttons for adding athletes and adding result, else just show race information
   let races = retrievedCompetitions[competition_tag]['Races']
+  console.log(races)
 
   if(races !== undefined){
     let race_tags = Object.keys(races)

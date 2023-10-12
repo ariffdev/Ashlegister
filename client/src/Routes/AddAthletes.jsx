@@ -22,7 +22,6 @@ const AddAthletes = ({retrievedCompetitions}) => {
 
   const handleSelectedCompetition = () => {
     setSelectedCompetition(document.getElementById('competition_tag').value)
-    console.log(selectedCompetition)
   }
   const handleForm = (event) => {
     event.preventDefault();
@@ -46,13 +45,11 @@ const AddAthletes = ({retrievedCompetitions}) => {
       'name': name,
       'race_tag':race_tag,
     }
-    console.log(athlete)
     
     axios
       .post(API_URL + `/competitions/${competition_tag}/athletes/${race_tag}`, athlete)
       .then(response => {
         if(response.status === 200){
-            console.log(response)
             setPageView('Success')
         }
       })

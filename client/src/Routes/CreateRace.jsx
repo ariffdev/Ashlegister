@@ -41,13 +41,11 @@ const CreateRace = ({retrievedCompetitions}) => {
       'stage':stage,
       'time': raceTime.toString()
     }
-    console.log(race.time)
     
     axios
       .post(API_URL + `/competitions/${competition_tag}/races`, race)
       .then(response => {
         if(response.status === 200){
-            console.log(response)
             setPageView('Success')
         }
       })

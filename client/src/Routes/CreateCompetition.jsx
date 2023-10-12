@@ -39,7 +39,6 @@ const CreateCompetition = () => {
       .post(API_URL + '/competitions', competition)
       .then(response => {
         if(response.status === 200){
-            console.log(response)
             setPageView('Success')
         }
       })
