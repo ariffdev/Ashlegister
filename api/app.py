@@ -8,7 +8,8 @@ app = FastAPI(title="Ashlegister API", docs_url='/')
 
 origins = [
   "http://localhost:5173",
-  "http://127.0.0.1:5173"
+  "http://127.0.0.1:5173",
+  "https://testdeploy-d226f.web.app"
 ]
 
 app.add_middleware(
