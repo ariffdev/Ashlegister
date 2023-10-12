@@ -9,7 +9,7 @@ import { useState } from 'react'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL = "https://ashlegister.onrender.com";
 
 const CreateRace = ({retrievedCompetitions}) => {
   const [raceTime, setRaceTime] = useState(null)

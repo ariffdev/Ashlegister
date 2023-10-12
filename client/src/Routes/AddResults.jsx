@@ -4,7 +4,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 const AddResults = ({retrievedCompetitions}) => {
-  const API_URL = 'http://127.0.0.1:8000';
+  const API_URL = "https://ashlegister.onrender.com";
   //Stages => Select Competition Stage -> Select Race Stage -> Add Results Stage -> Add More Stage
 
   
