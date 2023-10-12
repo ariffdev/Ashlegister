@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom"
 
 import '../Styles/Races.css'
 
+import { Link } from "react-router-dom";
+
 const Races = ({retrievedCompetitions}) => {
   let {competition_tag} = useParams();
 
@@ -27,10 +29,11 @@ const Races = ({retrievedCompetitions}) => {
     var rendering_races = race_details.map(race => {
       console.log(race)
       return(
+    <Link to={`/races/${competition_tag}/${race.race_tag}`} key={race['race_tag']}>
       <div key={race['race_tag']} className="race">
         <p className="race-title">{race['title']}</p>
-        <p></p>
       </div>
+    </Link>
       )
     })
   }else{

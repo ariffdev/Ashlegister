@@ -49,22 +49,18 @@ class Competition(BaseModel):
   }
 
 
-class Registration(BaseModel):
+class Athlete(BaseModel):
   competition_tag: str
   name: str
-  email: str
-  races: List[str]
-  gender: str
+  race_tag: str
 
   model_config = {
       "json_schema_extra": {
           "examples": [
               {
                   "competition_tag": 'diamondLXiamen23',
-                  "name": "Hadid",
-                  "email": "abdul.ariff@ashesi.alumni.edu.gh",
-                  "races": ["100m","200m","400m"],
-                  "gender": "M",
+                  "race_tag": "Men's100mPrelims",
+                  "name": "Hadid"
               }
           ]
       }

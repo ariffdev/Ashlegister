@@ -1,50 +1,55 @@
-import '../Styles/CreateRace.css'
+
+
+  // Get the list of competitions, select by competition_tag => help from Create_Race
+  // Get the list of races under each competition, select by race_tag => 
+  // Create field for athlete name
+  // Send a post request to athletes section on backend
+  // Confirm if successful
+  // Ask if wants to add another athlete
+  // Act accordingly
+
+import '../Styles/AddAthletes.css'
 import axios from 'axios'
-
-
-import {TimePicker} from 'react-ios-time-picker'
-
-
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 
-import 'react-datepicker/dist/react-datepicker.css'
 
 const API_URL = 'http://127.0.0.1:8000';
 
-const CreateRace = ({retrievedCompetitions}) => {
-  const [raceTime, setRaceTime] = useState(null)
+const AddAthletes = ({retrievedCompetitions}) => {
   const [pageView, setPageView] = useState('Form') //variable for controlling the display mode
+  const [selectedCompetition, setSelectedCompetition] = useState('')
 
+  const handleSelectedCompetition = () => {
+    setSelectedCompetition(document.getElementById('competition_tag').value)
+    console.log(selectedCompetition)
+  }
   const handleForm = (event) => {
     event.preventDefault();
   }
 
-  const handleCreateRace = () => {
+  const handleAddAthlete = () => {
     const competition_tag = document.getElementById('competition_tag').value;
+    const name = document.getElementById('name').value;
     const distance = document.getElementById('distance_selector').value;
     const gender = document.getElementById('gender_selector').value;
     const stage = document.getElementById('stage_selector').value;
     const race_tag = gender + distance + stage;
-    const title = gender + " " + distance + " " + stage;
-    sendRaceToBackend(competition_tag, distance, gender, race_tag, title, stage)
+    sendAthleteToBackend(competition_tag, name, race_tag)
   }  
 
 
-    const sendRaceToBackend = (competition_tag, distance, gender, race_tag, title, stage) => {
-    const race = 
+    const sendAthleteToBackend = (competition_tag, name, race_tag) => {
+    const athlete = 
     {
       'competition_tag': competition_tag, 
-      'distance':distance,
-      'gender':gender,
+      'name': name,
       'race_tag':race_tag,
-      'title': title,
-      'stage':stage,
-      'time': raceTime.toString()
     }
-    console.log(race.time)
+    console.log(athlete)
     
     axios
-      .post(API_URL + `/competitions/${competition_tag}/races`, race)
+      .post(API_URL + `/competitions/${competition_tag}/athletes/${race_tag}`, athlete)
       .then(response => {
         if(response.status === 200){
             console.log(response)
@@ -73,14 +78,20 @@ const CreateRace = ({retrievedCompetitions}) => {
     })
 
 
-  let race_form =     
+
+
+  let athlete_form =     
   <div className="create-competition">
       <div className="main-section">
         <div className='text-section'>
-          <p className='page-title'>CREATE RACE</p>
+          <p className='page-title'>ADD ATHLETES</p>
         </div>
         
         <form onClick={handleForm}>
+          <label htmlFor="name">Athlete Name</label>
+          <input type="text" name='name' id='name' />
+
+
           <p>Select Competition</p>
           <select name="" id="competition_tag">
             {
@@ -118,10 +129,7 @@ const CreateRace = ({retrievedCompetitions}) => {
             <option value="Finals">Finals</option>
           </select>
 
-          <p>Race Time</p>
-          <TimePicker className='time-picker' onChange={(time)=> setRaceTime(time)}/>
-
-          <button onClick={handleCreateRace} id='create-btn' type='button'>CREATE RACE</button>
+          <button onClick={handleAddAthlete} id='create-btn' type='button'>Add Athlete</button>
         </form>
         </div>
     </div>
@@ -130,18 +138,26 @@ const CreateRace = ({retrievedCompetitions}) => {
   if(pageView === 'Form'){
     return(
       <div>
-        {race_form}
+        {athlete_form}
       </div>
     )
   } else if(pageView ==='Success'){
     return(
       <div className='success'>
-        RACE CREATED SUCCESSFULLY
+        <div className="message">
+          ATHLETE ADDED SUCCESSFULLY
+        </div>
+
+
+        <button className="add-another-btn" onClick={() => setPageView('Form')}>
+          Add Another Athlete
+        </button>
+
       </div>
     )
   }
 
 }
 
-export default CreateRace
+export default AddAthletes
 

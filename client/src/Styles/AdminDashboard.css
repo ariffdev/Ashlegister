@@ -23,11 +23,16 @@
   border: solid var(--ashesi-dark);
 }
 
+
 .dashboard-item:hover {
   color: var(--ashesi-maroon);
   background-color: var(--ashesi-dark);
   border: solid var(--ashesi-maroon);
   cursor: pointer;
+}
+
+.add-btns{
+  width: 300px;
 }
 
 

@@ -33,13 +33,21 @@ def get_race_in_competition(competition_tag: str, race_tag: str):
 # CREATE
 @router.post('/races', tags=['Races'])
 def create_new_race_in_competition(competition_tag: str, race: Race):
-  account_type = check_account_type()
-  if account_type != 'Admin':
-    return {'Error': 'Need Admin rights'}
+  race = dict(race)
+  existing_races = db.child('Competitions').child(competition_tag).child('Races').get().val()
+  if existing_races != None: #Race already exists
+    try:
+      # Competition already exists so modify don't overwrite
+      if existing_races[race["race_tag"]]:
+        update_race(competition_tag, race['race_tag'], race)
+        return {"message": "Race updated successfully", 'race': race}
+    except KeyError:
+      db.child('Competitions').child(competition_tag).child('Races').child(race['race_tag']).set(race)
+      return {"message": "Race added successfully", 'race': race}
   else:
-    race = dict(race)
-    db.child('Competitions').child(competition_tag).child(
-        'Races').child(race['race_tag']).set(race)
+    db.child('Competitions').child(competition_tag).child('Races').child(race['race_tag']).set(race)
+    return {"message": "Race added successfully", 'race': race}
+
 
 
 # UPDATE
