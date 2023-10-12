@@ -8,6 +8,7 @@ const Header = () => {
     <header>
       <img className='header-logo' src={logo} />
       <p className='app-title'>ASHLEGISTER</p>
+      <p className="prototype">Prototype</p>
 
     </header>
   )

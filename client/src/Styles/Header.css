@@ -24,4 +24,17 @@ header{
   font-weight: bold;
 }
 
+.prototype{
+  color: var(--ashesi-maroon);
+  border: solid 2px var(--ashesi-maroon);
+  padding: 10px;
+  border-radius: 10%;
+}
+
+.prototype:hover{
+  color: var(--headerfootercolor);
+  background-color: var(--ashesi-maroon);
+  cursor: progress;
+}
+
 

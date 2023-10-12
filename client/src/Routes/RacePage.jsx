@@ -5,7 +5,6 @@ const RacePage = ({retrievedCompetitions}) => {
     let {competition_tag, race_tag} = useParams();
   // if logged in as admin, show race information and additional buttons for adding athletes and adding result, else just show race information
   let races = retrievedCompetitions[competition_tag]['Races']
-  console.log(races)
 
   if(races !== undefined){
     let race_tags = Object.keys(races)
@@ -19,19 +18,48 @@ const RacePage = ({retrievedCompetitions}) => {
         gender: races[race_tag]['gender'],
         distance: races[race_tag]['distance'],
         stage: races[race_tag]['stage'],
-        title: races[race_tag]['title']
+        title: races[race_tag]['title'],
+        Athletes: races[race_tag]['Athletes']
       }
       )
     })
 
-    let specific_race = race_details.filter(race => race['race_tag'] === race_tag)
-    console.log(specific_race)
+    let [specific_race] = race_details.filter(race => race['race_tag'] === race_tag)
+
+    let athletes = Object.keys(specific_race.Athletes)
+
+    let race_table =
+    <div className="race_table">
+      <table>
+        <thead>
+          <tr className="header_row">
+            <th>Name</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* Dynamic portion of table for athletes */}
+          {
+            athletes.map((athlete) => {
+              return(
+              <tr key={athlete}>
+                <td>{specific_race.Athletes[athlete]['name']}</td>
+                <td>N/A</td>
+              </tr>
+              )
+            })
+          }
+        </tbody>
+      </table>
+    </div>
 
     let race_information = 
-    <div>
+    <div className='race_page'>
       <div className="race_title">
+        {specific_race.title.toUpperCase()}
+
         {/* Render a table of athletes assigned to the race with results and everything */}
-        {specific_race[0].title}
+        {race_table}
       </div>
     </div>
 
