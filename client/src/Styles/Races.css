@@ -1,5 +1,18 @@
 
-.Competition{
+.page-title{
+  margin-top: 20px;
+}
+
+.Races{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+
+.race {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,19 +26,26 @@
   margin-top: 25px;
 }
 
-.competition-name{
+.race-title {
   font-size: 18px;
 }
 
-.Competition:hover{
+.race:hover {
   background-color: teal;
   border: solid 2px white;
   cursor: pointer;
 
-  .competition-name,
-    .competition-date {
-      color: white;
-    }
-  
+  .race-title{
+    color: white;
+  }
+
 }
 
+.none-yet{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 30%;
+}

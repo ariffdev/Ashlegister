@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import Competitions, Accounts, Races, Registrations
+from routers import Competitions, Accounts, Races, Athletes, Results
 from firebase.auth import create_firebase_auth_app
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -7,7 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(title="Ashlegister API", docs_url='/')
 
 origins = [
-  "http://localhost:5173"
+  "http://localhost:5173",
+  "http://127.0.0.1:5173"
 ]
 
 app.add_middleware(
@@ -18,10 +19,13 @@ app.add_middleware(
   allow_headers=["*"]
 )
 
-app.include_router(Competitions.router)
-app.include_router(Registrations.router)
-app.include_router(Races.router)
 app.include_router(Accounts.router)
+app.include_router(Competitions.router)
+app.include_router(Athletes.router)
+app.include_router(Races.router)
+app.include_router(Results.router)
+
+
 
 
 create_firebase_auth_app()

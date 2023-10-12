@@ -1,30 +1,19 @@
-
-
-*{
-  margin: 0;
-}
-
-
-.side-nav-bar{
+.dashboard{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: start;
-  padding: 5px;
-
-  background-color: var(--ashesi-maroon);
-  height: 86vh;
-  width: 300px;
+  height: 100%;
 }
 
+
 /* Styling Links from React Router */
-.nav-item{
+.dashboard-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 120px;
+  width: 180px;
   height: 40px;
-  font-size: 16px;
   font-weight: bold;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -34,40 +23,25 @@
   border: solid var(--ashesi-dark);
 }
 
-.nav-item:hover{
+
+.dashboard-item:hover {
   color: var(--ashesi-maroon);
   background-color: var(--ashesi-dark);
   border: solid var(--ashesi-maroon);
   cursor: pointer;
 }
 
-.home-btn{
-  color: var(--ashesi-dark);
-}
-
-.home-btn:hover{
-  color: var(--ashesi-maroon);
+.add-btns{
+  width: 300px;
 }
 
 
-
-a{
+a {
   text-decoration: none;
+
 }
 
-.login-btn, .dashboard-btn{
+.login-btn,
+.dashboard-btn {
   width: 150px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

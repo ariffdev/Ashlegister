@@ -1,0 +1,8 @@
+.position_input{
+  width: 80px;
+}
+
+.mark_input{
+  border: solid 4px var(--ashesi-maroon);
+  width: 80px;
+}

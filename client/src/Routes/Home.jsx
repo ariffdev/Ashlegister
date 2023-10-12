@@ -1,25 +1,11 @@
 import '../Styles/Home.css'
 
+import { Link } from 'react-router-dom';
+
 import Competition from '../Components/Competition';
 
-import axios from 'axios'
-import { useState, useEffect } from 'react';
 
-const API_URL = 'http://127.0.0.1:8000';
-
-const Home = () => {
-  const [retrievedCompetitions, setRetrievedCompetitions] = useState([])
-
-  useEffect(() =>{
-    axios
-        .get(API_URL + '/competitions')
-        .then((response) => {
-            setRetrievedCompetitions(response.data)
-        })
-
-  }, [])
-
-
+const Home = ({retrievedCompetitions}) => {
   let competition_tags = Object.keys(retrievedCompetitions)
 
   let competition_details = []
@@ -32,16 +18,39 @@ const Home = () => {
       competition_date: retrievedCompetitions[competition_tag]['date']
     }
     )
+
   })
-  let competitionList = competition_details.map(competition => <Competition key={competition.competition_tag} competition={competition}/>)
-  return (
-    <div className="HomeRoute">
-      <h1 className="home-title">
-        COMPETITION LIST
-      </h1>
-      {competitionList}
-    </div>
-  )
+
+  let competitionList = competition_details.map(competition => {
+    return(
+    <Link to={`/races/${competition.competition_tag}`} key={competition['competition_tag']}>
+      <Competition competition={competition}/>
+    </Link>
+    )
+  } )
+
+  if(competitionList !== undefined){
+    return (
+      <div className="HomeRoute">
+        <h1 className="home-title">
+          COMPETITION LIST
+        </h1>
+        {competitionList}
+      </div>
+    )
+  } else{
+    return(
+      <div className="HomeRoute">
+        <h1 className="home-title">
+          COMPETITION LIST
+        </h1>
+        <div>
+          NO COMPETITIONS YET
+        </div>
+      </div>
+    )
+  }
+
 }
 
 export default Home

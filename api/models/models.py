@@ -1,25 +1,34 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 
 class Race(BaseModel):
   competition_tag: str
   race_tag: str
-  race_distance: str
-  race_type: str  # final, semi, etc
+  distance: str
+  title: str
   gender: str
-  Results: Optional[dict]
+  stage: str
+  time: str
+  Results: Dict[str, Dict]
 
   model_config = {
       "json_schema_extra": {
           "examples": [
               {
                   "competition_tag": 'diamondLXiamen23',
-                  "race_tag": "100mMf",
-                  "race_distance": "100m",
-                  "race_type": 'final',
+                  "race_tag": "M100mFinal",
+                  "title": "Men's 100m Final",
+                  "distance": "100m",
                   "gender": "M",
-                  "Results": {}
+                  "stage": "Final",
+                  "date": "3rd September 2023",
+                  "time": "15:00",
+                  'Results': {
+                      'Results': {
+
+                      }
+                  }
               }
           ]
       }
@@ -46,26 +55,48 @@ class Competition(BaseModel):
   }
 
 
-class Registration(BaseModel):
+class Athlete(BaseModel):
   competition_tag: str
   name: str
-  email: str
-  races: List[str]
-  gender: str
+  race_tag: str
 
   model_config = {
       "json_schema_extra": {
           "examples": [
               {
                   "competition_tag": 'diamondLXiamen23',
-                  "name": "Hadid",
-                  "email": "abdul.ariff@ashesi.alumni.edu.gh",
-                  "races": ["100m","200m","400m"],
-                  "gender": "M",
+                  "race_tag": "Men's100mPrelims",
+                  "name": "Hadid"
               }
           ]
       }
   }
+
+class Result(BaseModel):
+    competition_tag: str
+    race_tag: str
+    Results: Dict[str, Dict]
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                {
+                    "competition_tag": 'diamondLXiamen23',
+                    "race_tag": "Men's100mPrelims",
+                    "Results": {
+                        "Mihambo":{
+                            "mark": "34",
+                            "position": "2"
+                        },
+                        "Mikasa": {
+                            "mark": "356",
+                            "position": "1"
+                        },
+                    }
+                }
+            ]
+        }
+    }
 
 
 
