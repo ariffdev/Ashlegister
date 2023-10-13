@@ -13,5 +13,5 @@ router = APIRouter(prefix="/competitions/{competition_tag}")
 def create_new_result_in_competition(competition_tag: str, result: Result, race_tag: str):
   result = dict(result)
   print(result)
-  db.child('Competitions').child(competition_tag).child('Races').child(race_tag).child('Results').update(result)
+  db.child('Competitions').child(competition_tag).child('Races').child(race_tag).set(result)
 

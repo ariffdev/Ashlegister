@@ -9,7 +9,7 @@ import { useState } from 'react'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
-const API_URL = "https://ashlegister.onrender.com";
+const API_URL = "http://localhost:8000";
 
 const CreateRace = ({retrievedCompetitions}) => {
   const [raceTime, setRaceTime] = useState(null)
@@ -41,9 +41,7 @@ const CreateRace = ({retrievedCompetitions}) => {
       'stage':stage,
       'time': raceTime.toString(),
       'Results':{
-        'Results':{
-            
-        }
+          
       }
     }
     

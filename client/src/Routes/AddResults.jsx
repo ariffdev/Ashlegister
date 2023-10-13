@@ -2,9 +2,10 @@
 import '../Styles/AddResults.css'
 import { useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const AddResults = ({retrievedCompetitions}) => {
-  const API_URL = "https://ashlegister.onrender.com";
+  const API_URL = "http://localhost:8000";
   //Stages => Select Competition Stage -> Select Race Stage -> Add Results Stage -> Add More Stage
 
   
@@ -18,6 +19,7 @@ const AddResults = ({retrievedCompetitions}) => {
       const selected_competition_tag = document.getElementById('competition_tag').value;
       setCurrentStage(<SelectRaceStage selected_competition_tag={selected_competition_tag}/>)
     }
+
 
     let competition_tags = Object.keys(retrievedCompetitions)
 
@@ -88,11 +90,22 @@ const AddResults = ({retrievedCompetitions}) => {
 
     })
 
-    let [specific_competition] = competition_details.filter(competition => competition['competition_tag'] === selected_competition_tag)
-    let races = specific_competition.Races
-    let race_tags = Object.keys(races)
+    let races;
+    let race_tags;
 
+    try{
+      let [specific_competition] = competition_details.filter(competition => competition['competition_tag'] === selected_competition_tag)
+      races = specific_competition.Races
+      race_tags = Object.keys(races)
 
+    }catch(err){
+      return(
+        <div className='none-yet'>
+          NO RACES IN SELECTED COMPETITION
+          <Link key={1} className='dashboard-item' to="/create-race"> Add Race </Link>
+        </div>
+      )
+    }
 
 
     return(
@@ -127,7 +140,8 @@ const AddResults = ({retrievedCompetitions}) => {
     const AddResultsStage = ({selected_competition_tag, selected_race_title}) => {
       let selected_race_tag = selected_race_title.replace(/\s+/g, '');
       let races = retrievedCompetitions[selected_competition_tag]['Races']
-      if(races !== undefined){
+      let athletes = retrievedCompetitions[selected_competition_tag]['Races']['Athletes']
+      if(athletes !== undefined){
         let race_tags = Object.keys(races)
 
         var race_details = []
@@ -183,8 +197,6 @@ const AddResults = ({retrievedCompetitions}) => {
               'mark' : marks[key],
               'position': positions[key],
             }
-          results['competition_tag'] = selected_competition_tag
-          results['race_tag'] = selected_race_tag
           console.log(results)
           
 
@@ -263,6 +275,13 @@ const AddResults = ({retrievedCompetitions}) => {
           <>
             {race_information}
           </>
+        )
+      }else{
+        return(
+          <div className="none-yet">
+            ADD ATHLETES BEFORE ADDING RESULTS
+            <Link key={1} className='dashboard-item' to="/add-athletes"> Add Athletes </Link>
+          </div>
         )
       }
     }

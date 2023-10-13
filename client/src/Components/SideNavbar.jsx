@@ -6,10 +6,13 @@ const SideNavbar = ({loginState}) => {
 
   let logAction
   if(loginState == false){
-    logAction = [<Link key={0} className='nav-item login-btn' to="/login"> Login as Admin </Link>]
+    logAction = [<Link key={0} className='nav-item login-btn' to="/login" onClick={() => setTimeout(()=>window.location.reload(false),100)}> Login as Admin </Link>]
   }else if(loginState == true){
-    logAction = [<Link key={0} className='nav-item login-btn' to="/logout"> Logout </Link>,
-                <Link key={1} className='nav-item dashboard-btn' to="/dashboard">Dashboard </Link>]
+    logAction = 
+    [
+    <Link key={0} className='nav-item login-btn' to="/logout" onClick={() => setTimeout(()=>window.location.reload(false),100)}> Logout </Link>,
+    <Link key={1} className='nav-item dashboard-btn' to="/dashboard"> Dashboard </Link>
+    ]
   }
 
   return(

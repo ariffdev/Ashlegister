@@ -15,7 +15,7 @@ def create_new_athlete_in_competition(competition_tag: str, athlete: Athlete, ra
   print(athlete)
   db.child('Competitions').child(competition_tag).child('Races').child(race_tag).child('Athletes').child(athlete['name']).set(athlete)
   #create template for results
-  db.child('Competitions').child(competition_tag).child('Races').child(race_tag).child('Results').child('Results').child(athlete['name']).set(
+  db.child('Competitions').child(competition_tag).child('Races').child(race_tag).child('Results').child(athlete['name']).set(
     {
       'mark':0,
       'position':0

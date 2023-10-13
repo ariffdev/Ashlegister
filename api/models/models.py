@@ -35,8 +35,6 @@ class Race(BaseModel):
   }
 
   
-
-
 class Competition(BaseModel):
   competition_tag: str
   title: str
@@ -72,17 +70,14 @@ class Athlete(BaseModel):
       }
   }
 
+
 class Result(BaseModel):
-    competition_tag: str
-    race_tag: str
     Results: Dict[str, Dict]
 
     model_config = {
         "json_schema_extra": {
             "examples": [
                 {
-                    "competition_tag": 'diamondLXiamen23',
-                    "race_tag": "Men's100mPrelims",
                     "Results": {
                         "Mihambo":{
                             "mark": "34",
@@ -97,8 +92,6 @@ class Result(BaseModel):
             ]
         }
     }
-
-
 
 
 

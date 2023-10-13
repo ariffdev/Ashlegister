@@ -2,7 +2,7 @@ import '../Styles/Login.css'
 import axios from 'axios';
 import AdminDashboard from './AdminDashboard';
 
-const API_URL = "https://ashlegister.onrender.com"
+const API_URL = "http://localhost:8000"
 
 
 const Login = ({loginState, changeLoginState}) => {

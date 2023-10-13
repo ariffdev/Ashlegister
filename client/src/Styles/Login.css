@@ -8,6 +8,8 @@
 
 .login-page{
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .side-section{
@@ -96,6 +98,7 @@ button:hover{
   justify-content: center;
   align-items: center;
   font-size: 30px;
+  margin-top: 30%;
 }
 
 
