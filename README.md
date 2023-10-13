@@ -19,7 +19,7 @@ Ashlegister is a web app for organizing and managing track/athletics events in a
 
 ## 💡 Why did I build this?
 
-Last summer, I participated in a couple of track meets in Kumasi, Ghana, West Africa. I noticed that the lineups and results of the races were all documented on paper by hand. As a result of this, it was extremely difficult to get the results since there was no centralized place where they were posted. After asking one person to the next, I realized that we could make use of a web app that would allow the complete organization and centralization of competitions. So I decided to build one. This specific project will be used for school <a href src="https://www.ashesi.edu.gh"> Ashesi University </a> but long term the plan is to scale to the national level.
+Last summer, I participated in a couple of track meets in Kumasi, Ghana, West Africa. I noticed that the lineups and results of the races were all documented on paper by hand. As a result of this, it was extremely difficult to get the results since there was no centralized place where they were posted. After asking one person to the next, I realized that we could make use of a web app that would allow the complete organization and centralization of competitions. So I decided to build one. This specific project will be used for Ashesi University but long term the plan is to scale to the national level.
 
 ## 🛠️ Local development
 
@@ -68,6 +68,11 @@ pip install -r requirements.txt
 uvicorn app:app --reload
 ```
 
+## 🕒 Future Work
+Backend documentation can be found <a href="https://ashlegister.onrender.com"> here </a>
+- Make the UI responsive for mobile
+- Add more features on the user end
+
 
 ## 🥁 Features
 Ashlegister provides competition organizers with the ability to:
@@ -80,4 +85,5 @@ Ashlegister provides competition organizers with the ability to:
 
 
 ## 📃 Documentation
-Backend documentation can be found <a href="https://ashlegister.web.app"> here </a>
+- Backend documentation can be found <a href="https://ashlegister.onrender"> here </a>
+Note that the backend server is running on a free service so it may take about a minute to spin on first try but will be fast afterwards
