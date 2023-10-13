@@ -36,12 +36,6 @@ const App = () => {
   }, [])
 
   if(isFetchingData == true){
-    // app = 
-    // <>
-    //   <h1 className="fetching">Fetching data...</h1>
-    //   <img className="fetching_icon" src={fetching_icon} alt="" />
-    // </>
-
     app_view =
       <div className="content-area">
         <h1 className="fetching">Fetching data...</h1>

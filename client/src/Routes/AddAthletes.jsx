@@ -1,13 +1,4 @@
 
-
-  // Get the list of competitions, select by competition_tag => help from Create_Race
-  // Get the list of races under each competition, select by race_tag => 
-  // Create field for athlete name
-  // Send a post request to athletes section on backend
-  // Confirm if successful
-  // Ask if wants to add another athlete
-  // Act accordingly
-
 import '../Styles/AddAthletes.css'
 import axios from 'axios'
 import { useState } from 'react'

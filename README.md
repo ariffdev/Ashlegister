@@ -77,3 +77,7 @@ Ashlegister provides competition organizers with the ability to:
 - Add athletes
 - Add race results
 - Host the results so they can be viewed by everyone
+
+
+## 📃 Documentation
+Backend documentation can be found <a href="https://ashlegister.web.app"> here </a>

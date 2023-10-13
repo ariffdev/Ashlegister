@@ -6,7 +6,6 @@ const Competition = ({competition}) => {
     return (
       <div className="Competition">
       <span className='competition-name'>{competition.competition_name}</span>
-      {/* <span className='competition-date'>{competition.competition_date}</span> */}
       </div>
     )
   }else{
