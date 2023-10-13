@@ -14,7 +14,7 @@ import { useState } from 'react'
 
 
 
-const API_URL = "http://localhost:8000";
+const API_URL = "https://ashlegister.onrender.com";
 
 const AddAthletes = ({retrievedCompetitions}) => {
   const [pageView, setPageView] = useState('Form') //variable for controlling the display mode

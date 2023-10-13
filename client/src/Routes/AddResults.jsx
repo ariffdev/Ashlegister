@@ -5,7 +5,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 const AddResults = ({retrievedCompetitions}) => {
-  const API_URL = "http://localhost:8000";
+  const API_URL = "https://ashlegister.onrender.com";
   //Stages => Select Competition Stage -> Select Race Stage -> Add Results Stage -> Add More Stage
 
   

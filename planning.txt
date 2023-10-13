@@ -1,4 +1,0 @@
-Registrations
-=============
-Anyone can register (post)
-Only admin can view (get), update(put) or delete registrations
