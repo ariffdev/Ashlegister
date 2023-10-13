@@ -140,7 +140,8 @@ const AddResults = ({retrievedCompetitions}) => {
     const AddResultsStage = ({selected_competition_tag, selected_race_title}) => {
       let selected_race_tag = selected_race_title.replace(/\s+/g, '');
       let races = retrievedCompetitions[selected_competition_tag]['Races']
-      let athletes = retrievedCompetitions[selected_competition_tag]['Races']['Athletes']
+      let athletes = retrievedCompetitions[selected_competition_tag]['Races'][selected_race_tag]['Athletes']
+      console.log(races)
       if(athletes !== undefined){
         let race_tags = Object.keys(races)
 

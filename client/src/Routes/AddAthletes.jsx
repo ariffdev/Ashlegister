@@ -11,7 +11,7 @@
 import '../Styles/AddAthletes.css'
 import axios from 'axios'
 import { useState } from 'react'
-import { Link } from 'react-router-dom';
+
 
 
 const API_URL = "http://localhost:8000";
@@ -90,7 +90,7 @@ const AddAthletes = ({retrievedCompetitions}) => {
 
 
           <p>Select Competition</p>
-          <select name="" id="competition_tag">
+          <select name="" id="competition_tag" onChange={handleSelectedCompetition}>
             {
               competition_details.map((competition) => {
                 return(

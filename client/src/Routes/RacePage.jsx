@@ -1,10 +1,12 @@
 import '../Styles/RacePage.css'
 import { useParams } from 'react-router-dom';
 
+
 const RacePage = ({retrievedCompetitions}) => {
+
+
   let {competition_tag, race_tag} = useParams();
   // if logged in as admin, show race information and additional buttons for adding athletes and adding result, else just show race information
-  console.log(retrievedCompetitions);
   let athletes = retrievedCompetitions[competition_tag]['Races'][race_tag]['Athletes']
   let races = retrievedCompetitions[competition_tag]['Races']
 

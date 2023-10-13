@@ -4,8 +4,8 @@ import '../Styles/Races.css'
 
 import { Link } from "react-router-dom";
 
+
 const Races = ({retrievedCompetitions}) => {
-  
   let {competition_tag} = useParams();
 
   let races = retrievedCompetitions[competition_tag]['Races']
