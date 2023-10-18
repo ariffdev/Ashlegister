@@ -68,12 +68,6 @@ pip install -r requirements.txt
 uvicorn app:app --reload
 ```
 
-## 🕒 Future Work
-Backend documentation can be found <a href="https://ashlegister.onrender.com"> here </a>
-- Make the UI responsive for mobile
-- Add more features on the user end
-
-
 ## 🥁 Features
 Ashlegister provides competition organizers with the ability to:
 
@@ -82,6 +76,12 @@ Ashlegister provides competition organizers with the ability to:
 - Add athletes
 - Add race results
 - Host the results so they can be viewed by everyone
+
+## 🕒 Future Work
+Backend documentation can be found <a href="https://ashlegister.onrender.com"> here </a>
+- Make the UI responsive for mobile
+- Add more features on the user end
+
 
 
 ## 📃 Documentation
