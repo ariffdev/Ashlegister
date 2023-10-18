@@ -4,11 +4,38 @@ import '../Styles/Races.css'
 
 import { Link } from "react-router-dom";
 
+import axios from 'axios'
+import { useState, useEffect } from "react";
 
-const Races = ({retrievedCompetitions}) => {
+
+
+const Races = () => {
+  const API_URL = "https://ashlegister.onrender.com";
+
+  const [comps, setComps] = useState()
+
   let {competition_tag} = useParams();
 
-  let races = retrievedCompetitions[competition_tag]['Races']
+  let races;
+
+
+useEffect(() => {
+  axios
+  .get(API_URL + '/competitions')
+  .then((response) => {
+    setComps(response.data)
+    console.log(comps)
+  })
+},[])
+
+
+
+try{
+  races = comps[competition_tag]['Races'];
+}
+catch{
+  console.log('Something not working')
+}
 
   if(races !== undefined){
     let race_tags = Object.keys(races)
