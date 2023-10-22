@@ -34,10 +34,11 @@ header{
 .prototype, .backend-docs{
   color: var(--ashesi-maroon);
   border: solid 2px var(--ashesi-maroon);
-  padding: 10px;
-  height: 45px;
+  padding: 5px;
+  font-size: 0.8rem;
   border-radius: 10px;
   margin-left: 10px;
+  width: 100%x;
 }
 
 .prototype:hover, .backend-docs:hover{

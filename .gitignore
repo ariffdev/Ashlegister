@@ -1,5 +1,6 @@
 __pycache__
 /api/ashlegister-env
+/api/venv
 .env
 serviceAccountKey.json
 /api/firebase/serviceAccountKey.json
