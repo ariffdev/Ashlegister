@@ -4,13 +4,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 50px;
+  height: 30px;
   width: 400px;
   border: solid 2px var(--ashesi-maroon);
   color: var(--ashesi-maroon);
-  border-radius: 5%;
   background-color: var(--ashesi-dark);
-  margin-top: 25px;
+  margin-bottom: -2px;
 }
 
 .competition-name{

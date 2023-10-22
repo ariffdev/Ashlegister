@@ -58,7 +58,6 @@ label{
 }
 
 input{
-  color: white;
   font-weight: bold;
   font-size: 16px;
   padding-left: 5px;
@@ -67,7 +66,6 @@ input{
   border-radius: 6px;
   border: solid 4px var(--ashesi-maroon);
   margin-bottom: 5px;
-  background: white ;
   display: block;
 }
 
@@ -99,6 +97,12 @@ button:hover{
   align-items: center;
   font-size: 30px;
   margin-top: 30%;
+}
+
+#email-address,
+#password{
+  background-color: white;
+  color: var(--ashesi-maroon);
 }
 
 
