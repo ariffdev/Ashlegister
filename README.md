@@ -12,6 +12,10 @@
 
 ![Ashlegister Home Page](image.png)
 
+## 💥 Notes on Testing Live Site
+
+Ashlegister's backend is hosted on a free tier hosting site so when you first try to access the site, it may a minute for the server to spin up. The loading screen will show and when it's ready you will view the full power of the platform. Sorry for the inconvenience!
+
 ## 💥 Introduction
 
 Ashlegister is a web app for organizing and managing track/athletics events in a paperless manner. It is built using React for frontend, FastAPI for the backend, and Firebase Realtime DB  for the database.

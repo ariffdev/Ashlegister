@@ -5,3 +5,6 @@ __pycache__
 serviceAccountKey.json
 /api/firebase/serviceAccountKey.json
 
+client/.firebaserc
+client/firebase.json
+client/.firebase/hosting.ZGlzdA.cache
