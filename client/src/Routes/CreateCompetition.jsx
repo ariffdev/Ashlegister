@@ -8,6 +8,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 const API_URL = "https://ashlegister.onrender.com";
 
+// Page for creating competitions
 const CreateCompetition = () => {
   const [competitionDate, setCompetitionDate] = useState(new Date())
   const [pageView, setPageView] = useState('Form') //variable for controlling the display mode

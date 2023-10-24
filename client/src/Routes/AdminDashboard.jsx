@@ -1,7 +1,7 @@
 import '../Styles/AdminDashboard.css'
 import {Link} from 'react-router-dom'
 
-
+// Dashboard that is viewed when logged in as Admin
 const AdminDashboard = () => {
 
       const adminAction = 

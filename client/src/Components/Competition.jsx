@@ -1,7 +1,7 @@
 import '../Styles/Competition.css'
 
 
-const Competition = ({competition}) => {
+const Competition = ({ competition }) => {
   if(competition !== undefined){
     return (
       <div className="Competition">

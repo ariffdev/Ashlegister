@@ -18,6 +18,7 @@ const AddAthletes = ({retrievedCompetitions}) => {
     event.preventDefault();
   }
 
+  // Groups all the input data 
   const handleAddAthlete = () => {
     const competition_tag = document.getElementById('competition_tag').value;
     const name = document.getElementById('name').value;
@@ -28,7 +29,7 @@ const AddAthletes = ({retrievedCompetitions}) => {
     sendAthleteToBackend(competition_tag, name, race_tag)
   }  
 
-
+  // Sends data to backend for entry into database
     const sendAthleteToBackend = (competition_tag, name, race_tag) => {
     const athlete = 
     {
@@ -37,6 +38,7 @@ const AddAthletes = ({retrievedCompetitions}) => {
       'race_tag':race_tag,
     }
     
+    // POST Request to send data to backend
     axios
       .post(API_URL + `/competitions/${competition_tag}/athletes/${race_tag}`, athlete)
       .then(response => {
@@ -50,6 +52,7 @@ const AddAthletes = ({retrievedCompetitions}) => {
   } 
 
 
+   // Converting competitions object to list for rendering
     let competition_tags = Object.keys(retrievedCompetitions)
 
     let competition_details = []
@@ -67,7 +70,7 @@ const AddAthletes = ({retrievedCompetitions}) => {
 
 
 
-
+    // Conditional display on the each render based on state
   let athlete_form =     
   <div className="create-competition">
       <div className="main-section">

@@ -12,7 +12,7 @@ import AddAthletes from '../Routes/AddAthletes'
 import AddResults from '../Routes/AddResults'
 
 
-const ContentArea = ({retrievedCompetitions, loginState, changeLoginState}) => {
+const ContentArea = ({ retrievedCompetitions, loginState, changeLoginState }) => {
 
 
   return(
