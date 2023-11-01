@@ -11,7 +11,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@mdi/js": "^7.2.96",
+    "@mdi/js": "^7.3.67",
     "@mdi/react": "^1.6.1",
     "axios": "^1.5.1",
     "happy-dom": "^12.9.1",

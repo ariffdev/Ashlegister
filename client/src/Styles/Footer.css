@@ -1,5 +1,5 @@
 .power-plug{
-  color: var(--ashesi-maroon)
+  color: var(--main-dark-blue)
 }
 
 footer{
@@ -8,7 +8,7 @@ footer{
   justify-content: flex-end;
   height: 7vh;
   width: 100vw;
-  background-color: var(--headerfootercolor);
+  background-color: var(--header-footer-color);
 
 }
 

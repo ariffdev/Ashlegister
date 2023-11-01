@@ -5,8 +5,8 @@
 
 
 .content-area{
-  color: var(--ashesi-maroon);
-  background-color: var(--ashesi-dark);
+  color: var(--main-dark-blue);
+  background-color: var(--background-color);
   height: 86vh;
   width: 100%;
 }

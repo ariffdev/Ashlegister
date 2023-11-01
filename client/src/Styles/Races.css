@@ -19,9 +19,9 @@
   flex-direction: column;
   height: 30px;
   width: 400px;
-  border: solid 2px var(--ashesi-maroon);
-  color: var(--ashesi-maroon);
-  background-color: var(--ashesi-dark);
+  border: solid 2px var(--main-dark-blue);
+  color: var(--main-dark-blue);
+  background-color: var(--background-color);
   margin-top: -2px;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .race:hover {
-  background-color: teal;
+  background-color: var(--main-dark-blue);
   border: solid 2px white;
   cursor: pointer;
 

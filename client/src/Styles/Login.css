@@ -2,7 +2,7 @@
 
 *{
   margin: 0;
-  color: var(--ashesi-maroon);
+  color: var(--main-dark-blue);
 }
 
 
@@ -13,7 +13,7 @@
 }
 
 .side-section{
-  background-color: var(--ashesi-maroon);
+  background-color: var(--main-dark-blue);
   height: 93vh;
   width: calc(20vw);
 }
@@ -26,7 +26,7 @@
 }
 
 .main-section{
-  background-color: var(--ashesi-dark);
+  background-color: var(--background-color);
   height: 93vh;
   width: 60vw;
 }
@@ -37,14 +37,14 @@
 
 .site-name{
   font-size: 60px;
-  color: var(--ashesi-maroon);
+  color: var(--main-dark-blue);
   font-weight: bold;
   margin-top: 100px;
 }
 
 .login-title{
   font-size: 64px;
-  color: var(--ashesi-maroon);
+  color: var(--main-dark-blue);
 }
 
 form{
@@ -64,7 +64,7 @@ input{
   height: 30px;
   width: 50vw;
   border-radius: 6px;
-  border: solid 4px var(--ashesi-maroon);
+  border: solid 4px var(--main-dark-blue);
   margin-bottom: 5px;
   display: block;
 }
@@ -74,10 +74,10 @@ button{
   height: 30px;
   width: 80px;
   margin-right: 5px;
-  background-color: var(--ashesi-maroon);
+  background-color: var(--main-dark-blue);
   border: none;
   border-radius: 5px;
-  color: var(--ashesi-dark);
+  color: var(--background-color);
   font-weight: bold;
 }
 
@@ -86,7 +86,7 @@ button:hover{
 }
 
 #login-btn{
-  background-color: var(--ashesi-maroon);
+  background-color: var(--main-dark-blue);
   margin-left: 35%;
   margin-right: 10px;
 }
@@ -102,7 +102,7 @@ button:hover{
 #email-address,
 #password{
   background-color: white;
-  color: var(--ashesi-maroon);
+  color: var(--main-dark-blue);
 }
 
 

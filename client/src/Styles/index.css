@@ -1,14 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
-:root {
-  --ashesi-maroon: #AD3537;
-  --ashesi-dark: #2B2525;
-  --headerfootercolor: #242222;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-*{
-  box-sizing: border-box;
+/* Colors for light mode [implement in near future] */
+:root{
+  --main-dark-blue: #4D6A99;
+  --background-color: white;
+  --header-footer-color: #29292d;
+  --header-footer-text-color: white;
 }
+
+:root{
+  --main-dark-blue: #4D6A99;
+  --background-color: #0C151D;
+  --header-footer-color: #29292d;
+  --header-footer-text-color: white;
+}
+
+
+
 
 body{
   font-family: 'Poppins', sans-serif;

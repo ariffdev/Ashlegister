@@ -12,7 +12,7 @@
 
 * {
   margin: 0;
-  color: var(--ashesi-maroon);
+  color: var(--main-dark-blue);
 }
 
 
@@ -24,7 +24,7 @@
 }
 
 .main-section {
-  background-color: var(--ashesi-dark);
+  background-color: var(--background-color);
   height: 93vh;
   width: 60vw;
 }
@@ -53,7 +53,7 @@ select {
   height: 30px;
   width: 50vw;
   border-radius: 6px;
-  border: solid 4px var(--ashesi-maroon);
+  border: solid 4px var(--main-dark-blue);
   margin-bottom: 20px;
   background: white;
   display: block;
@@ -65,7 +65,7 @@ button:hover {
 }
 
 #create-btn {
-  background-color: var(--ashesi-maroon);
+  background-color: var(--main-dark-blue);
   margin-left: 20%;
   margin-right: 10px;
 
@@ -74,10 +74,10 @@ button:hover {
   height: 30px;
   width: 180px;
   margin-right: 5px;
-  background-color: var(--ashesi-maroon);
+  background-color: var(--main-dark-blue);
   border: none;
   border-radius: 5px;
-  color: var(--ashesi-dark);
+  color: var(--background-color);
   font-weight: bold;
 }
 

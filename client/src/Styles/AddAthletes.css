@@ -15,7 +15,7 @@
 
 * {
   margin: 0;
-  color: var(--ashesi-maroon);
+  color: var(--main-dark-blue);
 }
 
 
@@ -27,7 +27,7 @@
 }
 
 .main-section {
-  background-color: var(--ashesi-dark);
+  background-color: var(--background-color);
   height: 93vh;
   width: 60vw;
 }
@@ -51,7 +51,7 @@ input {
   padding-left: 5px;
   height: 30px;
   border-radius: 6px;
-  border: solid 4px var(--ashesi-maroon);
+  border: solid 4px var(--main-dark-blue);
   margin-bottom: 20px;
   display: block;
 }
@@ -61,7 +61,7 @@ button:hover {
 }
 
 #create-btn {
-  background-color: var(--ashesi-maroon);
+  background-color: var(--main-dark-blue);
   margin-left: 20%;
   margin-right: 10px;
 
@@ -71,7 +71,7 @@ button:hover {
   width: 180px;
   border: none;
   border-radius: 5px;
-  color: var(--ashesi-dark);
+  color: var(--background-color);
   font-weight: bold;
 }
 
@@ -80,8 +80,8 @@ button:hover {
 #competition_date,
 #name {
   background-color: white;
-  color: var(--ashesi-maroon);
-  border: solid 4px var(--ashesi-maroon);
+  color: var(--main-dark-blue);
+  border: solid 4px var(--main-dark-blue);
 }
 
 
@@ -97,17 +97,17 @@ button:hover {
 }
 
 .add-another-btn{
-  color: var(--ashesi-maroon);
+  color: var(--main-dark-blue);
   margin-top: 15px;
   font-size: 18px;
   width: 200px;
   height: 50px;
-  border: solid 4px var(--ashesi-maroon);
+  border: solid 4px var(--main-dark-blue);
 }
 
 .add-another-btn:hover{
-  color: var(--ashesi-dark);
-  background-color: var(--ashesi-maroon);
-  border: solid 4px var(--ashesi-dark);
+  color: var(--background-color);
+  background-color: var(--main-dark-blue);
+  border: solid 4px var(--background-color);
   cursor: pointer;
 }

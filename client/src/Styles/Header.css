@@ -6,7 +6,8 @@ header{
   justify-content: center;
   height: 7vh;
   width: 100vw;
-  background-color: var(--headerfootercolor);
+  background-color: var(--header-footer-color);
+  color: var(--header-footer-text-color);
   padding: 3px;
 
 }
@@ -25,25 +26,37 @@ header{
 }
 
 .app-title{
-  color: var(--ashesi-maroon);
+  color: var(--header-footer-text-color);
   margin-right: auto;
   font-size: 40px;
   font-weight: bold;
 }
 
+.prototype{
+  margin-left: 30px;
+}
+
+.backend-docs{
+  margin-left: 10px;
+}
+
 .prototype, .backend-docs{
-  color: var(--ashesi-maroon);
-  border: solid 2px var(--ashesi-maroon);
+  color: var(--header-footer-text-color);
+  font-weight: bold;
+  border: solid 2px var(--header-footer-text-color);
   padding: 5px;
   font-size: 0.8rem;
   border-radius: 10px;
-  margin-left: 10px;
   width: 100%x;
 }
 
 .prototype:hover, .backend-docs:hover{
-  color: var(--headerfootercolor);
-  background-color: var(--ashesi-maroon);
+  background-color: var(--main-dark-blue);
+  border: solid 2px var(--main-dark-blue);
+  cursor: pointer;
+}
+
+.theme-btn:hover{
   cursor: pointer;
 }
 

@@ -17,17 +17,17 @@
   font-weight: bold;
   margin-top: 30px;
   margin-bottom: 10px;
-  color: var(--ashesi-dark);
-  background-color: var(--ashesi-maroon);
+  color: var(--background-color);
+  background-color: var(--main-dark-blue);
   border-radius: 5%;
-  border: solid var(--ashesi-dark);
+  border: solid var(--background-color);
 }
 
 
 .dashboard-item:hover {
-  color: var(--ashesi-maroon);
-  background-color: var(--ashesi-dark);
-  border: solid var(--ashesi-maroon);
+  color: var(--main-dark-blue);
+  background-color: var(--background-color);
+  border: solid var(--main-dark-blue);
   cursor: pointer;
 }
 
