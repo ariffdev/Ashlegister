@@ -10,7 +10,8 @@
 <img src="https://img.shields.io/badge/FastAPI-green" />
 </p>
 
-![Ashlegister Home Page](image.png)
+![Ashlegister Home Page](https://github.com/ariffdev/Ashlegister/assets/58955721/101f379e-19f3-46e2-bf8a-99c24dfb4ba5)
+
 
 ## 🗒️ Notes on Testing Live Site
 
