@@ -73,7 +73,7 @@ const AddAthletes = ({retrievedCompetitions}) => {
     // Conditional display on the each render based on state
   let athlete_form =     
   <div className="create-competition">
-      <div className="main-section">
+      <div className="add-athletes-main-section">
         <div className='text-section'>
           <p className='page-title'>ADD ATHLETES</p>
         </div>

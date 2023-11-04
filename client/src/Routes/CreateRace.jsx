@@ -77,7 +77,7 @@ const CreateRace = ({retrievedCompetitions}) => {
 
   let race_form =     
   <div className="create-competition">
-      <div className="main-section">
+      <div className="create-race-main-section">
         <div className='text-section'>
           <p className='page-title'>CREATE RACE</p>
         </div>

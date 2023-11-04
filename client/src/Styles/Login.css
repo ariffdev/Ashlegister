@@ -25,11 +25,7 @@
   align-items: center;
 }
 
-.main-section{
-  background-color: var(--background-color);
-  height: 93vh;
-  width: 60vw;
-}
+
 
 .ashesi-logo{
   margin-left: 10%;

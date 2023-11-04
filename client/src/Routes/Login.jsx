@@ -51,8 +51,8 @@ const Login = ({loginState, changeLoginState}) => {
 
     if(loginState == false){
       return(
-      <main className="login-page">
-          <div className="main-section">
+      <div className="login-page">
+          <div className="login-main-section">
             <div className='text-section'>
               <p className='site-name'>ASHLEGISTER</p>
               <p className='login-title'>ADMIN LOGIN</p>
@@ -69,7 +69,7 @@ const Login = ({loginState, changeLoginState}) => {
             </form>
 
           </div>
-        </main>
+        </div>
       )
     } else if(loginState == true){
       return(

@@ -50,7 +50,7 @@ const CreateCompetition = () => {
 
   let competition_form =     
   <div className="create-competition">
-      <div className="main-section">
+      <div className="create-competition-main-section">
         <div className='text-section'>
           <p className='page-title'>CREATE COMPETITION</p>
         </div>
