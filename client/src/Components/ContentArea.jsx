@@ -10,10 +10,12 @@ import CreateCompetition from '../Routes/CreateCompetition'
 import CreateRace from '../Routes/CreateRace'
 import AddAthletes from '../Routes/AddAthletes'
 import AddResults from '../Routes/AddResults'
+import { useContext } from 'react'
+import { dataContext } from '../Utilities/context'
 
 
-const ContentArea = ({ retrievedCompetitions, loginState, changeLoginState }) => {
-
+const ContentArea = ({ loginState, changeLoginState }) => {
+  const { retrievedCompetitions } = useContext(dataContext)
 
   return(
     <section className="content-area">

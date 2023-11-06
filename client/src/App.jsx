@@ -4,8 +4,11 @@ import Sidebar from "./Components/SideBar"
 import SideNavbar from "./Components/SideNavbar"
 import ContentArea from "./Components/ContentArea"
 
+
 import { useState, useEffect } from "react"
 import axios from 'axios'
+
+import { dataContext } from "./Utilities/context"
 
 import fetching_icon from './assets/loading_trans.gif'
 
@@ -16,14 +19,6 @@ const App = () => {
   const [retrievedCompetitions, setRetrievedCompetitions] = useState([])
   const [loginState, setLoginState] = useState(false)
   const [isFetchingData, setFetchingData] = useState(false)
-
-  const getData = () =>{
-    axios
-        .get(API_URL + '/competitions')
-        .then((response) => {
-            setRetrievedCompetitions(response.data)
-        })
-  }
 
 
   let app_view;
@@ -44,6 +39,9 @@ const App = () => {
 
   }, [])
 
+
+  console.log(retrievedCompetitions)
+
   if(isFetchingData == true){
     app_view =
       <div className="content-area">
@@ -52,7 +50,10 @@ const App = () => {
       </div>
   }else{
     app_view =
-      <ContentArea getData={getData} retrievedCompetitions={retrievedCompetitions} changeLoginState={changeLoginState} loginState={loginState}/>
+    <dataContext.Provider value = {{ retrievedCompetitions }}>
+      <ContentArea changeLoginState={changeLoginState} loginState={loginState}/>
+    </dataContext.Provider>
+
   }
   
 
