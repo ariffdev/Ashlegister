@@ -30,7 +30,7 @@ Last summer, I participated in a couple of track meets in Kumasi, Ghana, West Af
 - Frontend: React
 - Backend: FastAPI
 - Database: Firebase Realtime DB
-Other: React Router, Axios, React Date & Time Picker
+- Helper Libraries: **React Router**, **Axios**, **React Date & Time Picker**
   
 
 ## 🛠️ Local development
