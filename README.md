@@ -26,6 +26,13 @@ Ashlegister is a web app for organizing and managing track/athletics events in a
 
 Last summer, I participated in a couple of track meets in Kumasi, Ghana, West Africa. I noticed that the lineups and results of the races were all documented on paper by hand. As a result of this, it was extremely difficult to get the results since there was no centralized place where they were posted. After asking one person to the next, I realized that we could make use of a web app that would allow the complete organization and centralization of competitions. So I decided to build one. This specific project will be used for Ashesi University but long term the plan is to scale to the national level.
 
+## 🧱 Tech Stack
+- Frontend: React
+- Backend: FastAPI
+- Database: Firebase Realtime DB
+- Helper Libraries: **React Router**, **Axios**, **React Date & Time Picker**
+  
+
 ## 🛠️ Local development
 
 To ensure that you are able to install everything properly, I would recommend you to have <b>Git</b>, <b>NPM</b>, <b>Node.js</b> and <b>Python</b> installed.
