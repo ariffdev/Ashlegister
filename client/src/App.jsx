@@ -17,14 +17,6 @@ const App = () => {
   const [loginState, setLoginState] = useState(false)
   const [isFetchingData, setFetchingData] = useState(false)
 
-  const getData = () =>{
-    axios
-        .get(API_URL + '/competitions')
-        .then((response) => {
-            setRetrievedCompetitions(response.data)
-        })
-  }
-
 
   let app_view;
 
@@ -52,7 +44,7 @@ const App = () => {
       </div>
   }else{
     app_view =
-      <ContentArea getData={getData} retrievedCompetitions={retrievedCompetitions} changeLoginState={changeLoginState} loginState={loginState}/>
+      <ContentArea retrievedCompetitions={retrievedCompetitions} changeLoginState={changeLoginState} loginState={loginState}/>
   }
   
 
